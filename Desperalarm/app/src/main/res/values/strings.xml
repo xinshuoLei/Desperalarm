@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Desperalarm</string>
-    <string name="title_RegularAlarm">RegularAlarm</string>
-    <string name="title_DesperAlarm">DesperAlarm</string>
-    <string name="title_Timer">Timer</string>
-</resources>
