@@ -10,7 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/cardview_dark_background"/>
+        android:amPmTextColor="#EAE7E7"
+        android:background="#F6F6F6"
+        android:headerBackground="@color/colorAccent"
+        android:numbersSelectorColor="@color/colorAccent" />
 
     <ToggleButton
         android:id="@+id/toggleButton"

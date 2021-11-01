@@ -32,7 +32,6 @@ public class RegularAlarm extends AppCompatActivity {
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(RegularAlarm.this, "hii!!", Toast.LENGTH_SHORT).show();
                 Intent ii = new Intent(RegularAlarm.this, AlarmService.class);
                 stopService(ii);
             }
@@ -62,7 +61,7 @@ public class RegularAlarm extends AppCompatActivity {
             Intent intent= new Intent(this, AlarmReceiver.class);
             PendingIntent pendingIntent=PendingIntent.getBroadcast(this,0,intent,0);
             alarmManager.cancel(pendingIntent);
-            Toast.makeText(RegularAlarm.this, "ALARM OFF!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegularAlarm.this, "ALARM OFF", Toast.LENGTH_SHORT).show();
         }
 
 

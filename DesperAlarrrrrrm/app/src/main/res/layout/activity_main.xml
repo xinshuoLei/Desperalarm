@@ -10,29 +10,52 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to DesperAlarm!"
         android:layout_marginTop="160dp"
+        android:text="Welcome to\n DesperAlarm!"
         android:textAlignment="center"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="46dp"/>
+        android:textSize="35dp" />
 
     <Button
-        android:id="@+id/RegularAlarm"
+        android:id="@+id/regularAlarm"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
         android:text="Regular Alarm"
-        android:textSize="26dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
+
     <Button
-        android:id="@+id/HelperBtn"
+        android:id="@+id/desperAlarm"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginHorizontal="26dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="8dp"
-        android:text="Helper"
-        android:textSize="26dp"
+        android:text="DesperAlarm"
+        android:textSize="20dp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Timer"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Help"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
 
 </LinearLayout>

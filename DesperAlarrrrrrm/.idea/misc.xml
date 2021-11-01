@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/desperalarm.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/help.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/helper.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/regular_alarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/timer.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>

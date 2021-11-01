@@ -18,7 +18,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onReceive(Context context, Intent intent) {
-        //Toast.makeText(context, "Alarm! Wake up! Wake up!", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Time to wake up", Toast.LENGTH_LONG).show();
         Intent alarmIntent = new Intent(context, AlarmService.class);
         context.startService(alarmIntent);
     }

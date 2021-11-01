@@ -12,7 +12,7 @@ import android.os.Vibrator;
 
 
 /**
- * The service class for 
+ * The service class for
  */
 public class AlarmService extends Service {
 
