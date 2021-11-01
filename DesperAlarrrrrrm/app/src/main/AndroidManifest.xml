@@ -17,12 +17,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.desperalarm.RegularAlarm">
+        <activity android:name="com.example.desperalarm.RegularAlarm"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
+
                 <action android:name="android.intent.action.DEFAULT" />
 
             </intent-filter>
         </activity>
+        <activity android:name="com.example.desperalarm.Helper"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
         <receiver android:name="com.example.desperalarm.AlarmReceiver">
         </receiver>

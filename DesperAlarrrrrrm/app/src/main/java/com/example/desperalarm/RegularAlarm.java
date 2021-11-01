@@ -45,10 +45,10 @@ public class RegularAlarm extends AppCompatActivity {
             }
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, time, 10000, pendingIntent);
 
-        }
-        else {
-            alarmManager.cancel(pendingIntent);
-            Toast.makeText(RegularAlarm.this, "ALARM OFF", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intentService = new Intent(getApplicationContext(), AlarmReceiver.class);
+            getApplicationContext().stopService(intentService);
+            Toast.makeText(RegularAlarm.this, "ALARM OFF!!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

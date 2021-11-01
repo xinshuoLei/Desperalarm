@@ -21,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Button helperBtn = findViewById(R.id.HelperBtn);
+        helperBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Helper.class);
+                startActivity(i);
+            }
+        });
 
 
     }
