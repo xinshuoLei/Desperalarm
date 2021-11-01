@@ -11,20 +11,17 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
-public class AlarmReceiver extends BroadcastReceiver
-{
+public class AlarmReceiver extends BroadcastReceiver {
+
+    public Ringtone ringtone;
+
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onReceive(Context context, Intent intent) {
-        Vibrator vibrator = (Vibrator)context.getSystemService(context.VIBRATOR_SERVICE);
-        vibrator.vibrate(4000);
-
-        Toast.makeText(context, "Alarm! Wake up! Wake up!", Toast.LENGTH_LONG).show();
-        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        if (alarmUri == null) {
-            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        }
-        Ringtone ringtone = RingtoneManager.getRingtone(context, alarmUri);
-        ringtone.play();
+        //Toast.makeText(context, "Alarm! Wake up! Wake up!", Toast.LENGTH_LONG).show();
+        Intent alarmIntent = new Intent(context, AlarmService.class);
+        context.startService(alarmIntent);
     }
+
+
 }

@@ -3,8 +3,11 @@ package com.example.desperalarm;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -24,6 +27,16 @@ public class RegularAlarm extends AppCompatActivity {
 
         alarmTimePicker = (TimePicker) findViewById(R.id.timePicker);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        Button stop = findViewById(R.id.stopButton);
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(RegularAlarm.this, "hii!!", Toast.LENGTH_SHORT).show();
+                Intent ii = new Intent(RegularAlarm.this, AlarmService.class);
+                stopService(ii);
+            }
+        });
 
     }
     public void OnToggleClicked(View view) {
@@ -46,9 +59,14 @@ public class RegularAlarm extends AppCompatActivity {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, time, 10000, pendingIntent);
 
         } else {
-            Intent intentService = new Intent(getApplicationContext(), AlarmReceiver.class);
-            getApplicationContext().stopService(intentService);
-            Toast.makeText(RegularAlarm.this, "ALARM OFF!!!", Toast.LENGTH_SHORT).show();
+            Intent intent= new Intent(this, AlarmReceiver.class);
+            PendingIntent pendingIntent=PendingIntent.getBroadcast(this,0,intent,0);
+            alarmManager.cancel(pendingIntent);
+            Toast.makeText(RegularAlarm.this, "ALARM OFF!!", Toast.LENGTH_SHORT).show();
         }
+
+
     }
+
+
 }
