@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
+/*
+* The class for timer
+*/
 public class Timer extends AppCompatActivity {
 
     private TextView display;
@@ -60,7 +63,10 @@ public class Timer extends AppCompatActivity {
         });
 
     }
-
+    
+    /**
+    * function that close input keyboard
+    */
     private void closeKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {
@@ -68,7 +74,10 @@ public class Timer extends AppCompatActivity {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
-
+    
+    /**
+    * function that initialize timer
+    */
     private void initializeTimer() {
         String inputText = input.getText().toString();
         if (inputText.length() == 0) {
@@ -83,10 +92,14 @@ public class Timer extends AppCompatActivity {
             startTime = inputInMs;
             timeLeft = startTime;
             closeKeyboard();
+            // empty input field
             input.setText("");
         }
     }
-
+    
+    /**
+    * function that actually start/resume timer
+    */
     private void startTimer() {
         endTime = System.currentTimeMillis() + timeLeft;
 
@@ -108,19 +121,26 @@ public class Timer extends AppCompatActivity {
         timerRunning = true;
         updateUI();
     }
-
+    
+    /**
+    * function that pause timer
+    */
     private void pauseTimer() {
         timer.cancel();
         timerRunning = false;
         updateUI();
     }
-
+    
+    /**
+    * function that update the countdown
+    */
     private void updateDisplay() {
         int hours = (int) (timeLeft / 1000) / 3600;
         int minutes = (int) ((timeLeft / 1000) % 3600) / 60;
         int seconds = (int) (timeLeft / 1000) % 60;
 
         String timeLeftFormatted;
+        // format time
         if (hours > 0) {
             timeLeftFormatted = String.format(Locale.getDefault(),
                     "%d:%02d:%02d", hours, minutes, seconds);
@@ -131,7 +151,10 @@ public class Timer extends AppCompatActivity {
 
         display.setText(timeLeftFormatted);
     }
-
+    
+    /**
+    * function that update the UI. set button visibilities.
+    */
     private void updateUI() {
         if (timerRunning) {
             input.setVisibility(View.INVISIBLE);
