@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
+/**
+* Main activity for the app
+*/
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         Button regularAlarm = findViewById(R.id.regularAlarm);
         regularAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(regularAlarmIntent);
             }
         });
+        // navigation to help
         Button helpButton = findViewById(R.id.help);
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(helpIntent);
             }
         });
+        // navigation to timer
         Button timerButton = findViewById(R.id.timer);
         timerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(timerIntent);
             }
         });
+        // navigation to desperalarm
         Button desperButton = findViewById(R.id.desperAlarm);
         desperButton.setOnClickListener(new View.OnClickListener() {
             @Override
