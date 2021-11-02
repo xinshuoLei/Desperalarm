@@ -22,6 +22,14 @@ import java.util.Calendar;
 */
 public class RegularAlarm extends AppCompatActivity {
     /**
+     * number constants
+     */
+    final int SIXTY = 60;
+    final int SIXTY_K = 60000;
+    final int TWELVE = 12;
+    final int TWENTY_FOUR = 24;
+    final int THOUSAND = 1000;
+    /**
     * UI components
     */
     TimePicker alarmTimePicker;
@@ -58,12 +66,12 @@ public class RegularAlarm extends AppCompatActivity {
             Intent intent = new Intent(this, AlarmReceiver.class);
             pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
-            time = (calendar.getTimeInMillis()-(calendar.getTimeInMillis()%60000));
+            time = (calendar.getTimeInMillis()-(calendar.getTimeInMillis() % SIXTY_K));
             if(System.currentTimeMillis()>time) {
                 if (calendar.AM_PM == 0)
-                    time = time + (1000*60*60*12);
+                    time = time + (THOUSAND * SIXTY * SIXTY * TWELVE);
                 else
-                    time = time + (1000*60*60*24);
+                    time = time + (THOUSAND * SIXTY * SIXTY * TWENTY_FOUR);
             }
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, time, 10000, pendingIntent);
 

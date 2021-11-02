@@ -17,7 +17,13 @@ import java.util.Locale;
 * The class for timer
 */
 public class Timer extends AppCompatActivity {
-    
+    /**
+     * number constants
+     */
+    private final int THOUSAND = 1000;
+    private final int SIXTY = 60;
+    private final int SIXTY_K = 60000;
+    private final int THREE_POINT_SIX_K = 3600;
     /**
     * UI components
     */
@@ -27,6 +33,7 @@ public class Timer extends AppCompatActivity {
     private Button setButton;
     private Button resetButton;
     private CountDownTimer timer;
+
     /**
     * boolean that indicates if the timer if running
     */
@@ -98,7 +105,7 @@ public class Timer extends AppCompatActivity {
         if (inputText.length() == 0) {
             Toast.makeText(Timer.this, "Time can not be empty", Toast.LENGTH_SHORT).show();
         } else {
-            long inputInMs = Long.parseLong(inputText) * 60000;
+            long inputInMs = Long.parseLong(inputText) * SIXTY_K;
             // error checking
             if (inputInMs <= 0) {
                 Toast.makeText(Timer.this, "Time is not valid", Toast.LENGTH_SHORT).show();
@@ -118,7 +125,7 @@ public class Timer extends AppCompatActivity {
     private void startTimer() {
         endTime = System.currentTimeMillis() + timeLeft;
 
-        timer = new CountDownTimer(timeLeft, 1000) {
+        timer = new CountDownTimer(timeLeft, THOUSAND) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeLeft = millisUntilFinished;
@@ -150,9 +157,9 @@ public class Timer extends AppCompatActivity {
     * function that update the countdown
     */
     private void updateDisplay() {
-        int hours = (int) (timeLeft / 1000) / 3600;
-        int minutes = (int) ((timeLeft / 1000) % 3600) / 60;
-        int seconds = (int) (timeLeft / 1000) % 60;
+        int hours = (int) (timeLeft / THOUSAND) / THREE_POINT_SIX_K;
+        int minutes = (int) ((timeLeft / THOUSAND) % THREE_POINT_SIX_K) / SIXTY;
+        int seconds = (int) (timeLeft / THOUSAND) % SIXTY;
 
         String timeLeftFormatted;
         // format time
