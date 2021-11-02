@@ -11,9 +11,10 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
+/**
+* The broadcst receiver class for receiving alarms
+*/
 public class AlarmReceiver extends BroadcastReceiver {
-
-    public Ringtone ringtone;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -22,6 +23,5 @@ public class AlarmReceiver extends BroadcastReceiver {
         Intent alarmIntent = new Intent(context, AlarmService.class);
         context.startService(alarmIntent);
     }
-
 
 }
