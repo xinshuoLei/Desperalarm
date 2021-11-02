@@ -17,16 +17,31 @@ import java.util.Locale;
 * The class for timer
 */
 public class Timer extends AppCompatActivity {
-
+    
+    /**
+    * UI components
+    */
     private TextView display;
     private EditText input;
     private Button pauseResumeButton;
     private Button setButton;
     private Button resetButton;
     private CountDownTimer timer;
+    /**
+    * boolean that indicates if the timer if running
+    */
     private boolean timerRunning;
+    /**
+    * time left in timer, unit is ms
+    */
     private long timeLeft;
+    /**
+    * end time of timer, unit is ms
+    */
     private long endTime;
+    /**
+    * start time of timer, unit is ms
+    */
     private long startTime;
 
 
