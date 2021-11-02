@@ -21,9 +21,13 @@ import java.util.Calendar;
 * The class for a regular alarm
 */
 public class RegularAlarm extends AppCompatActivity {
+    /**
+    * UI components
+    */
     TimePicker alarmTimePicker;
     PendingIntent pendingIntent;
     AlarmManager alarmManager;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
