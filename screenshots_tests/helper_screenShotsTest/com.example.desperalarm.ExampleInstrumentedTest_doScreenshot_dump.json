@@ -1,0 +1,226 @@
+{
+  "viewHierarchy": {
+    "class": "android.widget.LinearLayout",
+    "left": 0,
+    "top": 0,
+    "width": 825,
+    "height": 1495,
+    "children": [
+      {
+        "class": "android.widget.TextView",
+        "left": 0,
+        "top": 275,
+        "width": 825,
+        "height": 586
+      },
+      {
+        "class": "android.widget.TextView",
+        "left": 0,
+        "top": 944,
+        "width": 825,
+        "height": 330
+      },
+      {
+        "class": "android.widget.TextView",
+        "left": 0,
+        "top": 1357,
+        "width": 825,
+        "height": 138
+      }
+    ]
+  },
+  "version": 1,
+  "axHierarchy": {
+    "class": "android.widget.LinearLayout",
+    "actionList": null,
+    "boundsInParent": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0
+    },
+    "boundsInScreen": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0
+    },
+    "canOpenPopup": false,
+    "childCount": 0,
+    "collectionInfo": null,
+    "collectionItemInfo": null,
+    "contentDescription": null,
+    "error": null,
+    "extras": "Bundle[{}]",
+    "inputType": 0,
+    "isCheckable": false,
+    "isChecked": false,
+    "isClickable": false,
+    "isContentInvalid": false,
+    "isDismissable": false,
+    "isEditable": false,
+    "isEnabled": false,
+    "isFocusable": false,
+    "isImportantForAccessibility": false,
+    "isLongClickable": false,
+    "isMultiLine": false,
+    "isPassword": false,
+    "isScrollable": false,
+    "isSelected": false,
+    "isVisibleToUser": false,
+    "liveRegion": 0,
+    "maxTextLength": -1,
+    "movementGranularities": 0,
+    "rangeInfo": null,
+    "text": null,
+    "children": [
+      {
+        "class": "android.widget.TextView",
+        "actionList": [
+          256,
+          512,
+          131072
+        ],
+        "boundsInParent": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundsInScreen": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "canOpenPopup": false,
+        "childCount": 0,
+        "collectionInfo": null,
+        "collectionItemInfo": null,
+        "contentDescription": null,
+        "error": null,
+        "extras": "Bundle[{}]",
+        "inputType": 0,
+        "isCheckable": false,
+        "isChecked": false,
+        "isClickable": false,
+        "isContentInvalid": false,
+        "isDismissable": false,
+        "isEditable": false,
+        "isEnabled": false,
+        "isFocusable": false,
+        "isImportantForAccessibility": false,
+        "isLongClickable": false,
+        "isMultiLine": true,
+        "isPassword": false,
+        "isScrollable": false,
+        "isSelected": false,
+        "isVisibleToUser": false,
+        "liveRegion": 0,
+        "maxTextLength": -1,
+        "movementGranularities": 31,
+        "rangeInfo": null,
+        "text": "Regular alarm is just like all other alarms. You can set the time and turn on the alarm by clicking on the first button. When the first button shows ON, the alarm is ON.If you want to stop the alarm after it starts ringing, click the stop button.",
+        "children": null
+      },
+      {
+        "class": "android.widget.TextView",
+        "actionList": [
+          256,
+          512,
+          131072
+        ],
+        "boundsInParent": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundsInScreen": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "canOpenPopup": false,
+        "childCount": 0,
+        "collectionInfo": null,
+        "collectionItemInfo": null,
+        "contentDescription": null,
+        "error": null,
+        "extras": "Bundle[{}]",
+        "inputType": 0,
+        "isCheckable": false,
+        "isChecked": false,
+        "isClickable": false,
+        "isContentInvalid": false,
+        "isDismissable": false,
+        "isEditable": false,
+        "isEnabled": false,
+        "isFocusable": false,
+        "isImportantForAccessibility": false,
+        "isLongClickable": false,
+        "isMultiLine": true,
+        "isPassword": false,
+        "isScrollable": false,
+        "isSelected": false,
+        "isVisibleToUser": false,
+        "liveRegion": 0,
+        "maxTextLength": -1,
+        "movementGranularities": 31,
+        "rangeInfo": null,
+        "text": "For DesperAlarm mode, the only difference from the regular alarm mode is you need to answer some question to turn off the alarm",
+        "children": null
+      },
+      {
+        "class": "android.widget.TextView",
+        "actionList": [
+          256,
+          512,
+          131072
+        ],
+        "boundsInParent": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundsInScreen": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "canOpenPopup": false,
+        "childCount": 0,
+        "collectionInfo": null,
+        "collectionItemInfo": null,
+        "contentDescription": null,
+        "error": null,
+        "extras": "Bundle[{}]",
+        "inputType": 0,
+        "isCheckable": false,
+        "isChecked": false,
+        "isClickable": false,
+        "isContentInvalid": false,
+        "isDismissable": false,
+        "isEditable": false,
+        "isEnabled": false,
+        "isFocusable": false,
+        "isImportantForAccessibility": false,
+        "isLongClickable": false,
+        "isMultiLine": true,
+        "isPassword": false,
+        "isScrollable": false,
+        "isSelected": false,
+        "isVisibleToUser": false,
+        "liveRegion": 0,
+        "maxTextLength": -1,
+        "movementGranularities": 31,
+        "rangeInfo": null,
+        "text": "Timer acts the same like a regular timer",
+        "children": null
+      }
+    ]
+  }
+}
