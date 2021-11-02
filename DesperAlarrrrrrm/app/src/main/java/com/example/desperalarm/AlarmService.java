@@ -15,8 +15,14 @@ import android.os.Vibrator;
  * The service class for playng rintone and vibration
  */
 public class AlarmService extends Service {
-
+    
+    /**
+    * ringtone used for service
+    */
     private Ringtone ringtone;
+    /**
+    * vibrator used for service
+    */
     private Vibrator vibrator;
 
     @Override
