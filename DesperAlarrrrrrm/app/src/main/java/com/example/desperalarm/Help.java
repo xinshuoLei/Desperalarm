@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+* The class for help screen.
+*/
 public class Help extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -11,7 +14,5 @@ public class Help extends AppCompatActivity {
         setContentView(R.layout.help);
 
         //TO-DO: add button direct to gmail that can send us developer suggestion to improve this app
-
-
     }
 }
