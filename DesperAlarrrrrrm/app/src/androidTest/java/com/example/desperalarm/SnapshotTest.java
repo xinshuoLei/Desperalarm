@@ -17,11 +17,11 @@ import com.facebook.testing.screenshot.ViewHelpers;
 
 /**
  * Instrumented test, which will execute on an Android device.
- *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * snapshot tests
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class SnapshotTest {
     @Test
     public void useAppContext() {
         // Context of the app under test.
