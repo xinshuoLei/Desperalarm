@@ -16,6 +16,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
+
+/**
+* The class for a regular alarm
+*/
 public class RegularAlarm extends AppCompatActivity {
     TimePicker alarmTimePicker;
     PendingIntent pendingIntent;
@@ -32,8 +36,8 @@ public class RegularAlarm extends AppCompatActivity {
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ii = new Intent(RegularAlarm.this, AlarmService.class);
-                stopService(ii);
+                Intent serviceIntent = new Intent(RegularAlarm.this, AlarmService.class);
+                stopService(serviceIntent);
             }
         });
 
@@ -41,14 +45,16 @@ public class RegularAlarm extends AppCompatActivity {
     public void OnToggleClicked(View view) {
         long time;
         if (((ToggleButton) view).isChecked()) {
+            // if alarm is on
             Toast.makeText(RegularAlarm.this, "ALARM ON", Toast.LENGTH_SHORT).show();
             Calendar calendar = Calendar.getInstance();
+            // get and convert time from time picker
             calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getCurrentHour());
             calendar.set(Calendar.MINUTE, alarmTimePicker.getCurrentMinute());
             Intent intent = new Intent(this, AlarmReceiver.class);
             pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
-            time=(calendar.getTimeInMillis()-(calendar.getTimeInMillis()%60000));
+            time = (calendar.getTimeInMillis()-(calendar.getTimeInMillis()%60000));
             if(System.currentTimeMillis()>time) {
                 if (calendar.AM_PM == 0)
                     time = time + (1000*60*60*12);
@@ -58,6 +64,7 @@ public class RegularAlarm extends AppCompatActivity {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, time, 10000, pendingIntent);
 
         } else {
+            // if button is toggled off, cancel all pending intent
             Intent intent= new Intent(this, AlarmReceiver.class);
             PendingIntent pendingIntent=PendingIntent.getBroadcast(this,0,intent,0);
             alarmManager.cancel(pendingIntent);
