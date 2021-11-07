@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12422037422037423" />
+        <entry key="app/src/main/res/layout/activity_main_main.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/activity_ring.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/desperalarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/fragment_createalarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/fragment_listalarms.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/help.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/item_alarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/regular_alarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/timer.xml" value="0.22327898550724637" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
