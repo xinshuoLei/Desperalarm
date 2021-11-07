@@ -40,4 +40,11 @@ answer some question to turn off the alarm"
         android:text="Timer acts the same like a regular timer"
         android:textAlignment="viewStart"
         android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Contact" />
 </LinearLayout>

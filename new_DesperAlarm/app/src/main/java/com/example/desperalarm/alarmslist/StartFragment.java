@@ -14,8 +14,7 @@ import androidx.navigation.Navigation;
 
 import com.example.desperalarm.R;
 import com.example.desperalarm.activities.DesperAlarm;
-import com.example.desperalarm.activities.Help;
-import com.example.desperalarm.activities.MainActivity;
+import com.example.desperalarm.activities.About;
 import com.example.desperalarm.activities.Timer;
 
 public class StartFragment extends Fragment {
@@ -32,11 +31,11 @@ public class StartFragment extends Fragment {
             }
         });
         // navigation to help
-        Button helpButton = view.findViewById(R.id.help);
+        Button helpButton = view.findViewById(R.id.about);
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent helpIntent = new Intent(getActivity(), Help.class);
+                Intent helpIntent = new Intent(getActivity(), About.class);
                 startActivity(helpIntent);
             }
         });
