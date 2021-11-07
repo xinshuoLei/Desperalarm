@@ -36,6 +36,7 @@ public class CreateAlarmFragment extends Fragment {
     @BindView(R.id.fragment_createalarm_title) EditText title;
     @BindView(R.id.fragment_createalarm_scheduleAlarm) Button scheduleAlarm;
     @BindView(R.id.fragment_createalarm_recurring) CheckBox recurring;
+    @BindView(R.id.fragment_createalarm_desperate) CheckBox desperate;
     @BindView(R.id.fragment_createalarm_checkMon) CheckBox mon;
     @BindView(R.id.fragment_createalarm_checkTue) CheckBox tue;
     @BindView(R.id.fragment_createalarm_checkWed) CheckBox wed;
@@ -102,7 +103,8 @@ public class CreateAlarmFragment extends Fragment {
                 thu.isChecked(),
                 fri.isChecked(),
                 sat.isChecked(),
-                sun.isChecked()
+                sun.isChecked(),
+                desperate.isChecked()
         );
 
         createAlarmViewModel.insert(alarm);

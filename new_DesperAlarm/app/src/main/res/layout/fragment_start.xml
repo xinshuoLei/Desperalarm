@@ -18,24 +18,15 @@
         android:textSize="35dp" />
 
     <Button
-        android:id="@+id/regularAlarm"
+        android:id="@+id/alarm"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:text="Regular Alarm"
+        android:text="Alarm"
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/desperAlarm"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="8dp"
-        android:text="DesperAlarm"
-        android:textSize="20dp"
-        android:textStyle="bold" />
 
     <Button
         android:id="@+id/timer"

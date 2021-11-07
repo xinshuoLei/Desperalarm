@@ -13,9 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.desperalarm.R;
-import com.example.desperalarm.activities.DesperAlarm;
-import com.example.desperalarm.activities.About;
-import com.example.desperalarm.activities.Timer;
 
 /**
  * The start screen for navigation to different modes
@@ -26,7 +23,8 @@ public class StartFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_start, container, false);
-        Button regularAlarm = view.findViewById(R.id.regularAlarm);
+        Button regularAlarm = view.findViewById(R.id.alarm);
+        // navigation to alarm
         regularAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,15 +47,6 @@ public class StartFragment extends Fragment {
             public void onClick(View view) {
                 Intent timerIntent = new Intent(getActivity(), Timer.class);
                 startActivity(timerIntent);
-            }
-        });
-        // navigation to desperalarm
-        Button desperButton = view.findViewById(R.id.desperAlarm);
-        desperButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent desperIntent = new Intent(getActivity(), DesperAlarm.class);
-                startActivity(desperIntent);
             }
         });
         return view;

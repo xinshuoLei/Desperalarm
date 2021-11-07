@@ -19,6 +19,7 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
     private ImageView alarmRecurring;
     private TextView alarmRecurringDays;
     private TextView alarmTitle;
+    private TextView alarmMode;
 
     Switch alarmStarted;
 
@@ -32,6 +33,7 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         alarmRecurring = itemView.findViewById(R.id.item_alarm_recurring);
         alarmRecurringDays = itemView.findViewById(R.id.item_alarm_recurringDays);
         alarmTitle = itemView.findViewById(R.id.item_alarm_title);
+        alarmMode = itemView.findViewById(R.id.item_alarm_mode);
 
         this.listener = listener;
     }
@@ -58,6 +60,12 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
             alarmTitle.setText(String.format("%s", alarm.getTitle()));
         } else {
             alarmTitle.setText(String.format("%s", "Alarm"));
+        }
+
+        if (alarm.isDesperate()) {
+            alarmMode.setText("Desperate");
+        } else {
+            alarmMode.setText("Regular");
         }
 
         alarmStarted.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

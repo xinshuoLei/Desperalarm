@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 /**
  * database for alarms
  */
-@Database(entities = {Alarm.class}, version = 1, exportSchema = false)
+@Database(entities = {Alarm.class}, version = 2, exportSchema = false)
 public abstract class AlarmDatabase extends RoomDatabase {
     public abstract AlarmDatabaseOps alarmDao();
 
@@ -28,10 +28,11 @@ public abstract class AlarmDatabase extends RoomDatabase {
                             context.getApplicationContext(),
                             AlarmDatabase.class,
                             "alarm_database"
-                    ).build();
+                    ).fallbackToDestructiveMigration().build();
                 }
             }
         }
         return INSTANCE;
     }
+
 }

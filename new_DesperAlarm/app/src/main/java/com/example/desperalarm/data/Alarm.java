@@ -17,6 +17,7 @@ import com.example.desperalarm.createalarm.DayUtil;
 
 import java.util.Calendar;
 
+import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.DESPERATE;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.FRIDAY;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.MONDAY;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.RECURRING;
@@ -51,12 +52,16 @@ public class Alarm {
      */
     private boolean monday, tuesday, wednesday, thursday, friday, saturday, sunday;
     private String title;
+    /**
+     * boolean indicating if this is a desperate alarm
+     */
+    private boolean desperate;
 
     private long created;
 
     public Alarm(int alarmId, int hour, int minute, String title, long created, boolean started,
                  boolean recurring, boolean monday, boolean tuesday, boolean wednesday,
-                 boolean thursday, boolean friday, boolean saturday, boolean sunday) {
+                 boolean thursday, boolean friday, boolean saturday, boolean sunday, boolean desperate) {
         this.alarmId = alarmId;
         this.hour = hour;
         this.minute = minute;
@@ -64,6 +69,7 @@ public class Alarm {
         this.recurring = recurring;
         this.title = title;
         this.created = created;
+        this.desperate = desperate;
 
         this.monday = monday;
         this.tuesday = tuesday;
@@ -91,6 +97,7 @@ public class Alarm {
         intent.putExtra(SATURDAY, saturday);
         intent.putExtra(SUNDAY, sunday);
         intent.putExtra(TITLE, title);
+        intent.putExtra(DESPERATE, desperate);
         PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(context, alarmId, intent, 0);
 
         // get current time from calendar
@@ -247,6 +254,8 @@ public class Alarm {
     public long getCreated() {
         return created;
     }
+
+    public boolean isDesperate() { return desperate; }
 
     public void setCreated(long created) {
         this.created = created;

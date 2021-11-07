@@ -24,6 +24,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
     public static final String SUNDAY = "SUNDAY";
     public static final String RECURRING = "RECURRING";
     public static final String TITLE = "TITLE";
+    public static final String DESPERATE = "DESPERATE";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -91,6 +92,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
     private void startAlarmService(Context context, Intent intent) {
         Intent intentService = new Intent(context, AlarmService.class);
         intentService.putExtra(TITLE, intent.getStringExtra(TITLE));
+        intentService.putExtra(DESPERATE, intent.getBooleanExtra(DESPERATE, false));
         // need to check version because startForeGroundService require certain SDK
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(intentService);

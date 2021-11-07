@@ -51,6 +51,16 @@
             android:hint="Alarm Label"
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout" />
 
+
+        <CheckBox
+            android:id="@+id/fragment_createalarm_desperate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="DESPERATE Alarm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
+
         <CheckBox
             android:id="@+id/fragment_createalarm_recurring"
             android:layout_width="match_parent"
@@ -58,7 +68,7 @@
             android:checked="false"
             android:text="Recurring Alarm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_desperate" />
 
         <LinearLayout
             android:id="@+id/fragment_createalarm_recurring_options"

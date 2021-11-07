@@ -19,6 +19,7 @@ import com.example.desperalarm.R;
 import com.example.desperalarm.activities.RingActivity;
 
 import static com.example.desperalarm.application.App.CHANNEL_ID;
+import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.DESPERATE;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.TITLE;
 
 
@@ -52,6 +53,12 @@ public class AlarmService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // create an intent for the ringtone activity, which is shown when user click notification
         Intent notificationIntent = new Intent(this, RingActivity.class);
+
+        notificationIntent.putExtra(DESPERATE, intent.getBooleanExtra(DESPERATE, false));
+        notificationIntent.putExtra(TITLE, intent.getStringExtra(TITLE));
+        // need to set action to successfully put extra intent
+        // reference: https://stackoverflow.com/questions/25172450/passing-data-with-a-pendingintent
+        notificationIntent.setAction("");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
         // set up notification

@@ -38,6 +38,15 @@ public class AlarmRepository {
         });
     }
 
+    /**
+     * delete all alarms
+     */
+    public void delete() {
+        AlarmDatabase.databaseWriteExecutor.execute(() -> {
+            alarmDatabaseOps.deleteAll();
+        });
+    }
+
     public LiveData<List<Alarm>> getAlarmsLiveData() {
         return alarmsLiveData;
     }
