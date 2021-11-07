@@ -6,6 +6,9 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.IBinder;
 import android.os.Vibrator;
 
@@ -18,37 +21,50 @@ import com.example.desperalarm.activities.RingActivity;
 import static com.example.desperalarm.application.App.CHANNEL_ID;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.TITLE;
 
+
+/**
+ * The Service class for activating the alarm
+ */
 public class AlarmService extends Service {
-    private MediaPlayer mediaPlayer;
+    /**
+     * vibrator used for the alarm
+     */
     private Vibrator vibrator;
+    /**
+     * Ringtone used for the alarm
+     */
+    private Ringtone ringtone;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        mediaPlayer = MediaPlayer.create(this, R.raw.alarm);
-        mediaPlayer.setLooping(true);
-
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // get the default ringtone
+        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        if (alarmUri == null) {
+            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        }
+        ringtone = RingtoneManager.getRingtone(this, alarmUri);
 
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        // create an intent for the ringtone activity, which is shown when user click notification
         Intent notificationIntent = new Intent(this, RingActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
+        // set up notification
         String alarmTitle = String.format("%s Alarm", intent.getStringExtra(TITLE));
-
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(alarmTitle)
-                .setContentText("Ring Ring .. Ring Ring")
+                .setContentText("Time to wake up")
                 .setSmallIcon(R.drawable.ic_alarm_black_24dp)
                 .setContentIntent(pendingIntent)
                 .build();
 
-        mediaPlayer.start();
-
+        // activate ringtone and vibrator
+        ringtone.play();
         long[] pattern = { 0, 100, 1000 };
         vibrator.vibrate(pattern, 0);
 
@@ -60,8 +76,7 @@ public class AlarmService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
-        mediaPlayer.stop();
+        ringtone.stop();
         vibrator.cancel();
     }
 

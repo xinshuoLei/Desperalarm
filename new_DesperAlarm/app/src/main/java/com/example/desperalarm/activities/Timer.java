@@ -15,9 +15,9 @@ import com.example.desperalarm.R;
 
 import java.util.Locale;
 
-/*
-* The class for timer
-*/
+/**
+ * The timer class
+ */
 public class Timer extends AppCompatActivity {
     /**
      * number constants

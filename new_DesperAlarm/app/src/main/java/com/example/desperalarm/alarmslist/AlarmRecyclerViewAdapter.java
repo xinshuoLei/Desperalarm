@@ -13,6 +13,9 @@ import com.example.desperalarm.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * view holder for the alarmListFragment
+ */
 public class AlarmRecyclerViewAdapter extends RecyclerView.Adapter<AlarmViewHolder> {
     private List<Alarm> alarms;
     private OnToggleAlarmListener listener;

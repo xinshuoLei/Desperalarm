@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.desperalarm.data.Alarm;
 import com.example.desperalarm.R;
 
+/**
+ * View holder for the recycler view
+ */
 public class AlarmViewHolder extends RecyclerView.ViewHolder {
     private TextView alarmTime;
     private ImageView alarmRecurring;
@@ -33,6 +36,10 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         this.listener = listener;
     }
 
+    /**
+     * set information about single alarm
+     * @param alarm
+     */
     public void bind(Alarm alarm) {
         String alarmText = String.format("%02d:%02d", alarm.getHour(), alarm.getMinute());
 
@@ -48,9 +55,9 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         }
 
         if (alarm.getTitle().length() != 0) {
-            alarmTitle.setText(String.format("%s | %d | %d", alarm.getTitle(), alarm.getAlarmId(), alarm.getCreated()));
+            alarmTitle.setText(String.format("%s", alarm.getTitle()));
         } else {
-            alarmTitle.setText(String.format("%s | %d | %d", "Alarm", alarm.getAlarmId(), alarm.getCreated()));
+            alarmTitle.setText(String.format("%s", "Alarm"));
         }
 
         alarmStarted.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

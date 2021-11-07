@@ -1,4 +1,4 @@
-package com.example.desperalarm.alarmslist;
+package com.example.desperalarm.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,9 @@ import com.example.desperalarm.activities.DesperAlarm;
 import com.example.desperalarm.activities.About;
 import com.example.desperalarm.activities.Timer;
 
+/**
+ * The start screen for navigation to different modes
+ */
 public class StartFragment extends Fragment {
 
     @Nullable

@@ -4,25 +4,37 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 import java.util.List;
 
+/**
+ * repository for alarms
+ */
 public class AlarmRepository {
-    private AlarmDao alarmDao;
+    private AlarmDatabaseOps alarmDatabaseOps;
     private LiveData<List<Alarm>> alarmsLiveData;
 
     public AlarmRepository(Application application) {
+        // get database and the interface
         AlarmDatabase db = AlarmDatabase.getDatabase(application);
-        alarmDao = db.alarmDao();
-        alarmsLiveData = alarmDao.getAlarms();
+        alarmDatabaseOps = db.alarmDao();
+        alarmsLiveData = alarmDatabaseOps.getAlarms();
     }
 
+    /**
+     * inserting an alarm
+     * @param alarm to insert
+     */
     public void insert(Alarm alarm) {
         AlarmDatabase.databaseWriteExecutor.execute(() -> {
-            alarmDao.insert(alarm);
+            alarmDatabaseOps.insert(alarm);
         });
     }
 
+    /**
+     * updating an alarm, including cancel it
+     * @param alarm alarm to update
+     */
     public void update(Alarm alarm) {
         AlarmDatabase.databaseWriteExecutor.execute(() -> {
-            alarmDao.update(alarm);
+            alarmDatabaseOps.update(alarm);
         });
     }
 

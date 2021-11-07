@@ -11,6 +11,10 @@ import com.example.desperalarm.service.RescheduleAlarmsService;
 
 import java.util.Calendar;
 
+
+/**
+ * the BroadcastReceiver that receive broadcast from alarm manager and start alarm service
+ */
 public class AlarmBroadcastReceiver extends BroadcastReceiver {
     public static final String MONDAY = "MONDAY";
     public static final String TUESDAY = "TUESDAY";
@@ -28,13 +32,15 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
             String toastText = String.format("Alarm Reboot");
             Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
             startRescheduleAlarmsService(context);
-        }
-        else {
+        } else {
             String toastText = String.format("Alarm Received");
             Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
             if (!intent.getBooleanExtra(RECURRING, false)) {
+                // if alarm is not recurring, just start
                 startAlarmService(context, intent);
-            } {
+            }
+            else {
+                // else check if today is included in recurring days
                 if (alarmIsToday(intent)) {
                     startAlarmService(context, intent);
                 }
@@ -42,6 +48,11 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
+    /**
+     * check if today is included in recurring days
+     * @param intent
+     * @return true if today is included
+     */
     private boolean alarmIsToday(Intent intent) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
@@ -80,9 +91,15 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
         return false;
     }
 
+    /**
+     * statr the alarm service
+     * @param context context
+     * @param intent intent
+     */
     private void startAlarmService(Context context, Intent intent) {
         Intent intentService = new Intent(context, AlarmService.class);
         intentService.putExtra(TITLE, intent.getStringExtra(TITLE));
+        // need to check version because startForeGroundService require certain SDK
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(intentService);
         } else {

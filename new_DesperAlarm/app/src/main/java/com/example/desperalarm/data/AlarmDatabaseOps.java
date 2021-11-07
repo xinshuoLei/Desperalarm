@@ -8,8 +8,11 @@ import androidx.room.Update;
 
 import java.util.List;
 
+/**
+ * interface for database operations
+ */
 @Dao
-public interface AlarmDao {
+public interface AlarmDatabaseOps {
     @Insert
     void insert(Alarm alarm);
 

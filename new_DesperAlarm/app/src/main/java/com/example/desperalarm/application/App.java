@@ -5,6 +5,9 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
+/**
+ * The Application class used for creating a notification channel for alarms
+ */
 public class App extends Application {
     public static final String CHANNEL_ID = "ALARM_SERVICE_CHANNEL";
 
@@ -12,10 +15,13 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        createNotificationChannnel();
+        createNotificationChannel();
     }
 
-    private void createNotificationChannnel() {
+    /**
+     * created the notification channel
+     */
+    private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,

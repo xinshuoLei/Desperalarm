@@ -25,7 +25,13 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * class used for creating an instance of Alarm
+ */
 public class CreateAlarmFragment extends Fragment {
+    /**
+     * all components in view
+     */
     @BindView(R.id.fragment_createalarm_timePicker) TimePicker timePicker;
     @BindView(R.id.fragment_createalarm_title) EditText title;
     @BindView(R.id.fragment_createalarm_scheduleAlarm) Button scheduleAlarm;
@@ -44,7 +50,6 @@ public class CreateAlarmFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         createAlarmViewModel = ViewModelProviders.of(this).get(CreateAlarmViewModel.class);
     }
 
@@ -54,7 +59,7 @@ public class CreateAlarmFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_createalarm, container, false);
 
         ButterKnife.bind(this, view);
-
+        // show recurring days option if recurring is checked
         recurring.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -65,7 +70,7 @@ public class CreateAlarmFragment extends Fragment {
                 }
             }
         });
-
+        // listener for the schedule alarm button
         scheduleAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +82,9 @@ public class CreateAlarmFragment extends Fragment {
         return view;
     }
 
+    /**
+     * function for scheduling an alarm. create an Alarm instance
+     */
     private void scheduleAlarm() {
         int alarmId = new Random().nextInt(Integer.MAX_VALUE);
 
@@ -98,7 +106,6 @@ public class CreateAlarmFragment extends Fragment {
         );
 
         createAlarmViewModel.insert(alarm);
-
         alarm.schedule(getContext());
     }
 }

@@ -21,9 +21,11 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Activity class for screen that appears  when user click notification
+ */
 public class RingActivity extends AppCompatActivity {
     @BindView(R.id.activity_ring_dismiss) Button dismiss;
-    @BindView(R.id.activity_ring_snooze) Button snooze;
     @BindView(R.id.activity_ring_clock) ImageView clock;
 
     @Override
@@ -33,54 +35,15 @@ public class RingActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        // onclick listener for dismiss button
         dismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // simply stop the alarm service
                 Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
                 getApplicationContext().stopService(intentService);
                 finish();
             }
         });
-
-        snooze.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(System.currentTimeMillis());
-                calendar.add(Calendar.MINUTE, 10);
-
-                Alarm alarm = new Alarm(
-                        new Random().nextInt(Integer.MAX_VALUE),
-                        calendar.get(Calendar.HOUR_OF_DAY),
-                        calendar.get(Calendar.MINUTE),
-                        "Snooze",
-                        System.currentTimeMillis(),
-                        true,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false
-                );
-
-                alarm.schedule(getApplicationContext());
-
-                Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
-                getApplicationContext().stopService(intentService);
-                finish();
-            }
-        });
-
-        animateClock();
-    }
-
-    private void animateClock() {
-        ObjectAnimator rotateAnimation = ObjectAnimator.ofFloat(clock, "rotation", 0f, 20f, 0f, -20f, 0f);
-        rotateAnimation.setRepeatCount(ValueAnimator.INFINITE);
-        rotateAnimation.setDuration(800);
-        rotateAnimation.start();
     }
 }
