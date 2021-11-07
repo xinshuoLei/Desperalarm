@@ -52,7 +52,6 @@
         </receiver>
 
         <service android:name="com.example.desperalarm.service.AlarmService" />
-        <service android:name="com.example.desperalarm.service.RescheduleAlarmsService" />
     </application>
 
 </manifest>

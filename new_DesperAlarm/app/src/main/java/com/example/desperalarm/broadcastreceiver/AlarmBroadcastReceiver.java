@@ -7,7 +7,6 @@ import android.os.Build;
 import android.widget.Toast;
 
 import com.example.desperalarm.service.AlarmService;
-import com.example.desperalarm.service.RescheduleAlarmsService;
 
 import java.util.Calendar;
 
@@ -28,24 +27,17 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
-            String toastText = String.format("Alarm Reboot");
-            Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
-            startRescheduleAlarmsService(context);
-        } else {
             String toastText = String.format("Alarm Received");
             Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
             if (!intent.getBooleanExtra(RECURRING, false)) {
                 // if alarm is not recurring, just start
                 startAlarmService(context, intent);
-            }
-            else {
+            } else {
                 // else check if today is included in recurring days
                 if (alarmIsToday(intent)) {
                     startAlarmService(context, intent);
                 }
             }
-        }
     }
 
     /**
@@ -107,12 +99,4 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    private void startRescheduleAlarmsService(Context context) {
-        Intent intentService = new Intent(context, RescheduleAlarmsService.class);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.startForegroundService(intentService);
-        } else {
-            context.startService(intentService);
-        }
-    }
 }
