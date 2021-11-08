@@ -8,8 +8,8 @@ import java.util.List;
  * repository for alarms
  */
 public class AlarmRepository {
-    private AlarmDatabaseOps alarmDatabaseOps;
-    private LiveData<List<Alarm>> alarmsLiveData;
+    private static AlarmDatabaseOps alarmDatabaseOps;
+    private static LiveData<List<Alarm>> alarmsLiveData;
 
     public AlarmRepository(Application application) {
         // get database and the interface
@@ -22,7 +22,7 @@ public class AlarmRepository {
      * inserting an alarm
      * @param alarm to insert
      */
-    public void insert(Alarm alarm) {
+    public static void insert(Alarm alarm) {
         AlarmDatabase.databaseWriteExecutor.execute(() -> {
             alarmDatabaseOps.insert(alarm);
         });
@@ -41,13 +41,13 @@ public class AlarmRepository {
     /**
      * delete all alarms
      */
-    public void delete() {
+    public static void delete() {
         AlarmDatabase.databaseWriteExecutor.execute(() -> {
             alarmDatabaseOps.deleteAll();
         });
     }
 
-    public LiveData<List<Alarm>> getAlarmsLiveData() {
+    public static LiveData<List<Alarm>> getAlarmsLiveData() {
         return alarmsLiveData;
     }
 }
