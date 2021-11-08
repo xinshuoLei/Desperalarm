@@ -43,6 +43,12 @@
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.desperalarm.activities.RegularAlarmGuide"
+            android:parentActivityName=".activities.About">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name="com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver">
             <intent-filter>

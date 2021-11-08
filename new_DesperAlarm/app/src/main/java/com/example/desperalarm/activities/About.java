@@ -26,6 +26,14 @@ public class About extends AppCompatActivity {
                 sendEmail();
             }
         });
+        Button regularAlarmGuide = findViewById(R.id.regularAlarmGuide);
+        regularAlarmGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RegularAlarmGuide.class);
+                startActivity(intent);
+            }
+        });
     }
     public void composeEmail(String recipient, String subject) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);

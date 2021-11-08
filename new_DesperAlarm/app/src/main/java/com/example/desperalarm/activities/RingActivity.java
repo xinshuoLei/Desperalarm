@@ -84,7 +84,6 @@ public class RingActivity extends AppCompatActivity {
                     finish();
                     Intent intent = new Intent(getApplicationContext(), Question.class);
                     startActivity(intent);
-
                 } else {
                     Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
                     getApplicationContext().stopService(intentService);

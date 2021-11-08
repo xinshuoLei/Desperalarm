@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/item_alarm.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/question.xml" value="0.21105072463768115" />
         <entry key="app/src/main/res/layout/regular_alarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/regular_alarm_guide.xml" value="0.21105072463768115" />
         <entry key="app/src/main/res/layout/timer.xml" value="0.22327898550724637" />
       </map>
     </option>

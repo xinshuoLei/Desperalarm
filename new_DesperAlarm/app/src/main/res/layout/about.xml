@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-
+        android:textStyle="bold"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Regular alarm is just like all other alarms. You can set the time and turn on
@@ -28,23 +28,33 @@ want to stop the alarm after it starts ringing, click the stop button."
         android:text="For DesperAlarm mode, the only difference from the regular alarm mode is you need to
 answer some question to turn off the alarm"
         android:textAlignment="viewStart"
+        android:textStyle="bold"
         android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/regularAlarmGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alarm Guide" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="Timer acts the same like a regular timer"
+        android:textStyle="bold"
+        android:text="Feel free to reach out to us developers by clicking the contact button below!"
         android:textAlignment="viewStart"
+
         android:textSize="20dp" />
 
     <Button
         android:id="@+id/send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+
         android:text="Contact" />
+
 </LinearLayout>

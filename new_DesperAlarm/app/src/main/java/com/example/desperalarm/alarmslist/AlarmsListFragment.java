@@ -37,6 +37,7 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
     private AlarmsListViewModel alarmsListViewModel;
     private RecyclerView alarmsRecyclerView;
     private Button addAlarm;
+    private Button deleteAlarm;
     private View listView;
 
     @Override
@@ -71,10 +72,19 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
 
         // navigate to create alarm screen
         addAlarm = view.findViewById(R.id.fragment_listalarms_addAlarm);
+
         addAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_alarmsListFragment_to_createAlarmFragment);
+            }
+        });
+        deleteAlarm = view.findViewById(R.id.fragment_listalarms_deleteAlarm);
+        deleteAlarm.setPadding(100, 100, 100, 70);
+        deleteAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmsListViewModel.clearAlarmRepository();
             }
         });
 
