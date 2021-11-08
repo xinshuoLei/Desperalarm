@@ -18,6 +18,7 @@ public class AlarmsListViewModel extends AndroidViewModel {
     public AlarmsListViewModel(@NonNull Application application) {
         super(application);
         alarmRepository = new AlarmRepository(application);
+        //alarmRepository.delete();
         alarmsLiveData = alarmRepository.getAlarmsLiveData();
     }
 

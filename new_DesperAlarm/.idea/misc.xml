@@ -3,22 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-anydpi/ic_back_button.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.371875" />
-        <entry key="app/src/main/res/drawable/ic_alarm_black_24dp.xml" value="0.371875" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.371875" />
-        <entry key="app/src/main/res/drawable/ic_looks_one_black_24dp.xml" value="0.371875" />
-        <entry key="app/src/main/res/drawable/ic_repeat_black_24dp.xml" value="0.371875" />
         <entry key="app/src/main/res/layout/about.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12422037422037423" />
         <entry key="app/src/main/res/layout/activity_main_main.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/activity_ring.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/desperalarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/dialog.xml" value="0.21105072463768115" />
         <entry key="app/src/main/res/layout/fragment_createalarm.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/fragment_listalarms.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/help.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/item_alarm.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/question.xml" value="0.21105072463768115" />
         <entry key="app/src/main/res/layout/regular_alarm.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/timer.xml" value="0.22327898550724637" />
       </map>

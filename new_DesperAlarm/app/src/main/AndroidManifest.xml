@@ -32,6 +32,11 @@
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.desperalarm.activities.Question">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.desperalarm.activities.Timer"
             android:parentActivityName=".activities.MainActivity">
             <intent-filter>
