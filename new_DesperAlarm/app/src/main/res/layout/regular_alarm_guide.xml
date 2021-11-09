@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the Desperalarm guide!
+here you can specify the alarm mode you want: regular or DESPERATE! Also you can set its label for
+the explanation waking you up or remind you for something!"
+        android:textStyle="italic"
+        android:textSize="26dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/regular_alarm_guide"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-128dp" />
+
+</LinearLayout>

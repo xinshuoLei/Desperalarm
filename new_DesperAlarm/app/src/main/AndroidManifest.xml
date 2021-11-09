@@ -32,7 +32,7 @@
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.desperalarm.activities.Question">
+        <activity android:name="com.example.desperalarm.activities.QuestionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>

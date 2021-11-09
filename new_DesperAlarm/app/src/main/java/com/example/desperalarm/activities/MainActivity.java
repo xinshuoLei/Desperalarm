@@ -13,6 +13,7 @@ import com.example.desperalarm.R;
 
 /**
  * MainActivity class
+ * regular alarm reference: https://learntodroid.com/how-to-create-a-simple-alarm-clock-app-in-android/
  */
 public class MainActivity extends AppCompatActivity {
 

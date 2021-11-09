@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * database for alarms
+ * database for alarms. version number is 2 because we updated schema to add desperate boolean
  */
 @Database(entities = {Alarm.class}, version = 2, exportSchema = false)
 public abstract class AlarmDatabase extends RoomDatabase {

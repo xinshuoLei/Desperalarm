@@ -1,6 +1,7 @@
 package com.example.desperalarm.alarmslist;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -10,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.desperalarm.data.Alarm;
 import com.example.desperalarm.R;
+import com.example.desperalarm.data.AlarmDatabase;
+import com.example.desperalarm.data.AlarmDatabaseOps;
+import com.example.desperalarm.data.AlarmRepository;
 
 /**
  * View holder for the recycler view
@@ -20,6 +24,7 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
     private TextView alarmRecurringDays;
     private TextView alarmTitle;
     private TextView alarmMode;
+    private Button alarmDelete;
 
     Switch alarmStarted;
 
@@ -34,6 +39,7 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         alarmRecurringDays = itemView.findViewById(R.id.item_alarm_recurringDays);
         alarmTitle = itemView.findViewById(R.id.item_alarm_title);
         alarmMode = itemView.findViewById(R.id.item_alarm_mode);
+        alarmDelete = itemView.findViewById(R.id.delete_alarm);
 
         this.listener = listener;
     }
@@ -72,6 +78,16 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 listener.onToggle(alarm);
+            }
+        });
+
+        alarmDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // cancel the alarm first
+                alarmStarted.setChecked(false);
+                // delete from database
+                AlarmRepository.deleteById(alarm.getAlarmId());
             }
         });
     }

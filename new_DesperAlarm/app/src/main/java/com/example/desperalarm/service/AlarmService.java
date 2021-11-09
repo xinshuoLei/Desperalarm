@@ -11,6 +11,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
 import android.os.Vibrator;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -56,10 +57,8 @@ public class AlarmService extends Service {
 
         notificationIntent.putExtra(DESPERATE, intent.getBooleanExtra(DESPERATE, false));
         notificationIntent.putExtra(TITLE, intent.getStringExtra(TITLE));
-        // need to set action to successfully put extra intent
-        // reference: https://stackoverflow.com/questions/25172450/passing-data-with-a-pendingintent
-        notificationIntent.setAction("");
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
+                notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // set up notification
         String alarmTitle = String.format("%s Alarm", intent.getStringExtra(TITLE));

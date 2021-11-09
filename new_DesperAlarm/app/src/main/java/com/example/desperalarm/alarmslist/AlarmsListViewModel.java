@@ -11,6 +11,9 @@ import com.example.desperalarm.data.AlarmRepository;
 
 import java.util.List;
 
+/**
+ * the model for AlarmListFragment
+ */
 public class AlarmsListViewModel extends AndroidViewModel {
     private AlarmRepository alarmRepository;
     private LiveData<List<Alarm>> alarmsLiveData;
@@ -18,18 +21,28 @@ public class AlarmsListViewModel extends AndroidViewModel {
     public AlarmsListViewModel(@NonNull Application application) {
         super(application);
         alarmRepository = new AlarmRepository(application);
-        //alarmRepository.delete();
         alarmsLiveData = alarmRepository.getAlarmsLiveData();
     }
 
+    /**
+     * update the alarm status
+     * @param alarm alarm to update
+     */
     public void update(Alarm alarm) {
         alarmRepository.update(alarm);
     }
 
+    /**
+     * get live data
+     * @return alarm live data
+     */
     public LiveData<List<Alarm>> getAlarmsLiveData() {
         return alarmsLiveData;
     }
 
+    /**
+     * clear the whole repo. used for debugging and developing
+     */
     public void clearAlarmRepository() {
         alarmRepository.delete();
     }

@@ -47,6 +47,19 @@ public class AlarmRepository {
         });
     }
 
+    /**
+     * delete alarm by id
+     * @param id id of the alarm to delete
+     */
+    public static void deleteById(int id) {
+        AlarmDatabase.databaseWriteExecutor.execute(() -> {
+            alarmDatabaseOps.deleteById(id);
+        });
+    }
+
+    /**
+     * getter
+     */
     public static LiveData<List<Alarm>> getAlarmsLiveData() {
         return alarmsLiveData;
     }

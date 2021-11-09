@@ -19,6 +19,9 @@ public interface AlarmDatabaseOps {
     @Query("DELETE FROM alarm_table")
     void deleteAll();
 
+    @Query("DELETE FROM alarm_table WHERE alarmId = :id")
+    void deleteById(int id);
+
     @Query("SELECT * FROM alarm_table ORDER BY created ASC")
     LiveData<List<Alarm>> getAlarms();
 

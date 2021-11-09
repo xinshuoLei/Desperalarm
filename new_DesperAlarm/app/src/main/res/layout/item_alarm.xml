@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:gravity="right">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         app:cardCornerRadius="6dp"
-        app:cardElevation="6dp"
-        android:layout_margin="8dp">
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,19 +23,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textSize="36sp"/>
+                android:textSize="40sp" />
 
             <ImageView
+                android:id="@+id/item_alarm_recurring"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/item_alarm_recurring"
-                android:layout_margin="2dp"/>
+                android:layout_margin="2dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="2dp">
+                android:layout_margin="2dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/item_alarm_recurringDays"
@@ -46,21 +47,38 @@
                     android:id="@+id/item_alarm_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/item_alarm_mode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
-            <Switch
-                android:id="@+id/item_alarm_started"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+            <LinearLayout
+                android:id="@+id/margin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/delete_alarm"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="delete"
+                    android:textSize="8sp" />
+
+                <Switch
+                    android:id="@+id/item_alarm_started"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

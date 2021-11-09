@@ -79,14 +79,6 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
                 Navigation.findNavController(v).navigate(R.id.action_alarmsListFragment_to_createAlarmFragment);
             }
         });
-        deleteAlarm = view.findViewById(R.id.fragment_listalarms_deleteAlarm);
-        deleteAlarm.setPadding(100, 100, 100, 70);
-        deleteAlarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alarmsListViewModel.clearAlarmRepository();
-            }
-        });
 
         // enable the back button
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
