@@ -1,5 +1,6 @@
 package com.example.desperalarm.alarmslist;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -70,6 +71,7 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
 
         if (alarm.isDesperate()) {
             alarmMode.setText("Desperate");
+            alarmMode.setTextColor(Color.RED);
         } else {
             alarmMode.setText("Regular");
         }

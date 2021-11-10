@@ -4,24 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="vertical">
 
-    <TextView
-        android:id="@+id/textView6"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Welcome to the Desperalarm guide!
-here you can specify the alarm mode you want: regular or DESPERATE! Also you can set its label for
-the explanation waking you up or remind you for something!"
-        android:textStyle="italic"
-        android:textSize="26dp"/>
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/regular_alarm_guide"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-128dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/regularHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Regular Alarm:"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/regularSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="To schedule a regular alarm, simply select a time and click the schedule alarm button."
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/regularScheduleImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/regular_alarm_schedule"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="-128dp" />
+
+            <TextView
+                android:id="@+id/regularDismiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="When a regular alarm goes off, just click dismiss to stop it"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/regularDismissImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/regular_alarm_dismiss"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="-128dp" />
+
+            <TextView
+                android:id="@+id/desperHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="DesperAlarm:"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/desperSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="To schedule a regular alarm, select a time, check the DESPERATE Alarm checkbox
+and click the schedule alarm button."
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/desperScheduleImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/dersperalarm_schedule"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="-128dp" />
+
+            <TextView
+                android:id="@+id/desperDismiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="When a regular alarm goes off, click hard dismiss, then answer a question
+correctly to stop it"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/desperDismissImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/desperalarm_dismiss"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="-128dp" />
+
+            <ImageView
+                android:id="@+id/desperQuestionImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/desperalarm_question"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="-128dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
