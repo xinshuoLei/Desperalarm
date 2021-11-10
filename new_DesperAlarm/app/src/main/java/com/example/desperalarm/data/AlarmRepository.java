@@ -22,7 +22,7 @@ public class AlarmRepository {
      * inserting an alarm
      * @param alarm to insert
      */
-    public static void insert(Alarm alarm) {
+    public void insert(Alarm alarm) {
         AlarmDatabase.databaseWriteExecutor.execute(() -> {
             alarmDatabaseOps.insert(alarm);
         });
@@ -36,6 +36,10 @@ public class AlarmRepository {
         AlarmDatabase.databaseWriteExecutor.execute(() -> {
             alarmDatabaseOps.update(alarm);
         });
+    }
+
+    public Alarm getById(int id) {
+        return alarmDatabaseOps.getById(id);
     }
 
     /**

@@ -28,7 +28,7 @@ public class QuestionActivity extends AppCompatActivity {
         TextView question = findViewById(R.id.challenge);
         // generate a random question
         int[] questionVals = generateNumber();
-        int questionOp = generateOperation();
+        boolean questionOp = generateOperation();
         question.setText(formatQuestion(questionVals, questionOp));
         Button submit = findViewById(R.id.submit);
         // when user clicks submit, check answer
@@ -54,7 +54,7 @@ public class QuestionActivity extends AppCompatActivity {
      * Generate two random numbers
      * @return array of generated numbers
      */
-    private int[] generateNumber() {
+    public static int[] generateNumber() {
         Random rand = new Random();
         int upperbound = 100;
         int firstVal = rand.nextInt(upperbound);
@@ -63,13 +63,12 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     /**
-     * Generate a random operation, 1 represents addition, 0 represents subtraction
+     * Generate a random operation, true represents addition, false represents subtraction
      * @return the generated operation
      */
-    private int generateOperation() {
+    public static boolean generateOperation() {
         Random rand = new Random();
-        int upperbound = 1;
-        int operation = rand.nextInt(upperbound);
+        boolean operation = rand.nextBoolean();
         return operation;
     }
 
@@ -79,9 +78,9 @@ public class QuestionActivity extends AppCompatActivity {
      * @param operation question operation
      * @return formatted question
      */
-    private String formatQuestion(int[] vals, int operation) {
+    private String formatQuestion(int[] vals, boolean operation) {
         String operationString = " - ";
-        if (operation == 1) {
+        if (operation) {
             operationString = " + ";
         }
         return vals[0] + operationString + vals[1] + " = ?";
@@ -94,8 +93,8 @@ public class QuestionActivity extends AppCompatActivity {
      * @param answer the answer to chek
      * @return true if the answer is correct
      */
-    public static boolean checkAnswer(int[] vals, int operation, int answer) {
-        if (operation == 1) {
+    public static boolean checkAnswer(int[] vals, boolean operation, int answer) {
+        if (operation) {
             return answer == (vals[0] + vals[1]);
         }
         return answer == (vals[0] - vals[1]);

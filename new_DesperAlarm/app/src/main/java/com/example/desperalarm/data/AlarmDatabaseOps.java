@@ -25,6 +25,9 @@ public interface AlarmDatabaseOps {
     @Query("SELECT * FROM alarm_table ORDER BY created ASC")
     LiveData<List<Alarm>> getAlarms();
 
+    @Query("SELECT * FROM alarm_table WHERE alarmId = :id")
+    Alarm getById(int id);
+
     @Update
     void update(Alarm alarm);
 }
