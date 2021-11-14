@@ -27,17 +27,23 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.question);
         TextView question = findViewById(R.id.challenge);
         // generate a random question
-        int[] questionVals = generateNumber();
-        boolean questionOp = generateOperation();
+        int questionOp = generateOperation();
+        int[] questionVals = null;
+        if (questionOp != 2) {
+            questionVals = generateNumber100();
+        } else {
+            questionVals = generateNumber10();
+        }
         question.setText(formatQuestion(questionVals, questionOp));
         Button submit = findViewById(R.id.submit);
         // when user clicks submit, check answer
+        int[] finalQuestionVals = questionVals;
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText answer = findViewById(R.id.answer);
                 String result = answer.getText().toString();
-                if (checkAnswer(questionVals, questionOp, Integer.parseInt(result))) {
+                if (checkAnswer(finalQuestionVals, questionOp, Integer.parseInt(result))) {
                     Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
                     getApplicationContext().stopService(intentService);
                     finish();
@@ -54,7 +60,7 @@ public class QuestionActivity extends AppCompatActivity {
      * Generate two random numbers
      * @return array of generated numbers
      */
-    public static int[] generateNumber() {
+    public static int[] generateNumber100() {
         Random rand = new Random();
         int upperbound = 100;
         int firstVal = rand.nextInt(upperbound);
@@ -63,13 +69,27 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     /**
-     * Generate a random operation, true represents addition, false represents subtraction
+     *
+     * @return generate array of integer in 10s
+     */
+
+    public static int[] generateNumber10() {
+        Random rand = new Random();
+        int upperbound = 10;
+        int firstVal = rand.nextInt(upperbound);
+        int secondVal = rand.nextInt(upperbound);
+        return new int[]{firstVal, secondVal};
+    }
+
+    /**
+     * Generate a random operation, 1 represents addition, 0 represents subtraction, 2 represents multiplication
      * @return the generated operation
      */
-    public static boolean generateOperation() {
+    public static int generateOperation() {
         Random rand = new Random();
-        boolean operation = rand.nextBoolean();
-        return operation;
+        int upperbound = 2;
+        int operation = rand.nextInt(upperbound);
+        return 2;
     }
 
     /**
@@ -78,10 +98,12 @@ public class QuestionActivity extends AppCompatActivity {
      * @param operation question operation
      * @return formatted question
      */
-    private String formatQuestion(int[] vals, boolean operation) {
+    private String formatQuestion(int[] vals, int operation) {
         String operationString = " - ";
-        if (operation) {
+        if (operation == 1) {
             operationString = " + ";
+        } else if (operation == 2) {
+            operationString = " * ";
         }
         return vals[0] + operationString + vals[1] + " = ?";
     }
@@ -93,9 +115,11 @@ public class QuestionActivity extends AppCompatActivity {
      * @param answer the answer to chek
      * @return true if the answer is correct
      */
-    public static boolean checkAnswer(int[] vals, boolean operation, int answer) {
-        if (operation) {
+    public static boolean checkAnswer(int[] vals, int operation, int answer) {
+        if (operation == 1) {
             return answer == (vals[0] + vals[1]);
+        } else if (operation == 2) {
+            return answer == vals[0] * vals[1];
         }
         return answer == (vals[0] - vals[1]);
     }

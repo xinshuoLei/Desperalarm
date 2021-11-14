@@ -28,11 +28,14 @@ public class LocalTest {
      */
     public void checkAnswer() {
         int[] additionInput = new int[]{22, 35};
-        assertTrue(QuestionActivity.checkAnswer(additionInput, true, 22+35));
-        assertFalse(QuestionActivity.checkAnswer(additionInput, true, 22-35));
+        assertTrue(QuestionActivity.checkAnswer(additionInput, 1, 22+35));
+        assertFalse(QuestionActivity.checkAnswer(additionInput, 1, 22-35));
         int[] subtractionInput = new int[]{10, 90};
-        assertTrue(QuestionActivity.checkAnswer(subtractionInput, false, 10-90));
-        assertFalse(QuestionActivity.checkAnswer(subtractionInput, false, 10+90));
+        assertTrue(QuestionActivity.checkAnswer(subtractionInput, 0, 10-90));
+        assertFalse(QuestionActivity.checkAnswer(subtractionInput, 0, 10+90));
+        int[] multInput = new int[]{8, 9};
+        assertTrue(QuestionActivity.checkAnswer(multInput, 2, 56));
+        assertFalse(QuestionActivity.checkAnswer(multInput, 2, 77));
     }
 
     @Test
@@ -40,15 +43,15 @@ public class LocalTest {
      * check generated numbers and operation are random
      */
     public void checkQuestionGeneration() {
-        int[] firstVal = QuestionActivity.generateNumber();
-        int[] secondVal = QuestionActivity.generateNumber();
-        int[] thirdVal = QuestionActivity.generateNumber();
+        int[] firstVal = QuestionActivity.generateNumber100();
+        int[] secondVal = QuestionActivity.generateNumber100();
+        int[] thirdVal = QuestionActivity.generateNumber100();
         assertFalse(firstVal == secondVal && secondVal == thirdVal);
-        boolean firstOp = QuestionActivity.generateOperation();
-        boolean secondOp = QuestionActivity.generateOperation();
-        boolean thirdOp = QuestionActivity.generateOperation();
-        boolean fourthOp = QuestionActivity.generateOperation();
-        assertFalse(firstOp && secondOp && thirdOp && fourthOp);
+        int firstOp = QuestionActivity.generateOperation();
+        int secondOp = QuestionActivity.generateOperation();
+        int thirdOp = QuestionActivity.generateOperation();
+        int fourthOp = QuestionActivity.generateOperation();
+        assertFalse(firstOp== 1 && secondOp == 1 && thirdOp == 1 && fourthOp == 1);
     }
 
 
