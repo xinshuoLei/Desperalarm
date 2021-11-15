@@ -37,7 +37,6 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
     private AlarmsListViewModel alarmsListViewModel;
     private RecyclerView alarmsRecyclerView;
     private Button addAlarm;
-    private Button deleteAlarm;
     private View listView;
 
     @Override

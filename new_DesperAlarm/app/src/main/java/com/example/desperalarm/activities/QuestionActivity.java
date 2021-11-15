@@ -3,16 +3,23 @@ package com.example.desperalarm.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.desperalarm.R;
+import com.example.desperalarm.generatequestion.CalculationGenerator;
+import com.example.desperalarm.generatequestion.CountGenerator;
+import com.example.desperalarm.generatequestion.HardCalculationGenerator;
+import com.example.desperalarm.generatequestion.QuestionGenerator;
+import com.example.desperalarm.generatequestion.SortGenerator;
 import com.example.desperalarm.service.AlarmService;
-import java.util.Random;
 
 
 /**
@@ -21,82 +28,106 @@ import java.util.Random;
  */
 public class QuestionActivity extends AppCompatActivity {
 
+    private final String EMPTY = "";
+    private final String CALCULATION = "Calculation";
+    private final String CALCULATION_HARD = "Hard calculation (multiplication included)";
+    private final String SORT = "Sorting";
+    private final String COUNT = "Count appearances";
+
+    private QuestionGenerator generator = null;
+    private String[] typesArray = {EMPTY, CALCULATION, CALCULATION_HARD, SORT, COUNT};
+    private String typeSelection = EMPTY;
+    private TextView question;
+    private Button submit;
+    private EditText answer;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.question);
-        TextView question = findViewById(R.id.challenge);
-        // generate a random question
-        int[] questionVals = generateNumber();
-        boolean questionOp = generateOperation();
-        question.setText(formatQuestion(questionVals, questionOp));
-        Button submit = findViewById(R.id.submit);
-        // when user clicks submit, check answer
+        setContentView(R.layout.activity_question);
+
+        question = findViewById(R.id.challenge);
+        submit = findViewById(R.id.submit);
+        answer = findViewById(R.id.answer);
+        answer.setVisibility(View.INVISIBLE);
+        question.setVisibility(View.INVISIBLE);
+        submit.setVisibility(View.INVISIBLE);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText answer = findViewById(R.id.answer);
-                String result = answer.getText().toString();
-                if (checkAnswer(questionVals, questionOp, Integer.parseInt(result))) {
-                    Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
-                    getApplicationContext().stopService(intentService);
-                    finish();
-                } else {
-                    // if answer is wrong, clear text fild
-                    answer.setText("");
-                }
+                 EditText answer = findViewById(R.id.answer);
+                 String result = answer.getText().toString();
+                 if (generator.checkAnswer(result)) {
+                     Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
+                     getApplicationContext().stopService(intentService);
+                     finish();
+                 } else {
+                     // if answer is wrong, clear text field
+                     answer.setText("");
+                 }
             }
         });
 
+
+
+        // set options for question types
+        Spinner questionType = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, typesArray);
+        questionType.setAdapter(adapter);
+        questionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+                typeSelection = typesArray[position];
+                setQuestion();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                return;
+            }
+
+        });
+
+
     }
 
     /**
-     * Generate two random numbers
-     * @return array of generated numbers
+     * set the question prompt based on current selection
      */
-    public static int[] generateNumber() {
-        Random rand = new Random();
-        int upperbound = 100;
-        int firstVal = rand.nextInt(upperbound);
-        int secondVal = rand.nextInt(upperbound);
-        return new int[]{firstVal, secondVal};
-    }
+    private void setQuestion() {
+        switch (typeSelection) {
+            case CALCULATION:
+                // generate a random question
+                generator = new CalculationGenerator();
+                question.setText(generator.outputQuestion());
+                break;
 
-    /**
-     * Generate a random operation, true represents addition, false represents subtraction
-     * @return the generated operation
-     */
-    public static boolean generateOperation() {
-        Random rand = new Random();
-        boolean operation = rand.nextBoolean();
-        return operation;
-    }
+            case CALCULATION_HARD:
+                generator = new HardCalculationGenerator();
+                question.setText(generator.outputQuestion());
+                break;
 
-    /**
-     * Format the question into a string
-     * @param vals question vals
-     * @param operation question operation
-     * @return formatted question
-     */
-    private String formatQuestion(int[] vals, boolean operation) {
-        String operationString = " - ";
-        if (operation) {
-            operationString = " + ";
+            case SORT:
+                generator = new SortGenerator();
+                question.setText(generator.outputQuestion());
+                break;
+
+            case COUNT:
+                generator = new CountGenerator();
+                question.setText(generator.outputQuestion());
+                break;
+
+            default:
+                question.setText("");
         }
-        return vals[0] + operationString + vals[1] + " = ?";
-    }
-
-    /**
-     * Check if the answer is correct
-     * @param vals question vals
-     * @param operation question ops
-     * @param answer the answer to chek
-     * @return true if the answer is correct
-     */
-    public static boolean checkAnswer(int[] vals, boolean operation, int answer) {
-        if (operation) {
-            return answer == (vals[0] + vals[1]);
+        if (!typeSelection.equals(EMPTY)) {
+            question.setVisibility(View.VISIBLE);
+            answer.setVisibility(View.VISIBLE);
+            submit.setVisibility(View.VISIBLE);
         }
-        return answer == (vals[0] - vals[1]);
+
     }
 }

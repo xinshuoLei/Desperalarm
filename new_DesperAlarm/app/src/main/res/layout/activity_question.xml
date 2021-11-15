@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/challenge"
+        android:id="@+id/typePrompt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
+        android:text="Selection a question type using the dropdown menu below:"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/challenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="TextView"
-        android:textSize="34sp" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/answer"
@@ -19,10 +35,12 @@
         android:layout_height="wrap_content"
         android:hint="answer"
         />
+
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="submit"
+        android:visibility="invisible" />
 
 </LinearLayout>
