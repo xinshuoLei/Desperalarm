@@ -8,15 +8,15 @@
         android:id="@+id/regularSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textStyle="bold"
+        android:layout_marginTop="50dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Regular alarm is just like all other alarms. You can set the time and turn on
 the alarm by clicking on the first button. When the first button shows ON, the alarm is ON.If you
 want to stop the alarm after it starts ringing, click the stop button."
         android:textAlignment="viewStart"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView3"
@@ -33,28 +33,34 @@ answer some question to turn off the alarm"
 
     <Button
         android:id="@+id/regularAlarmGuide"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_corner"
         android:text="Alarm Guide" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:textStyle="bold"
         android:text="Feel free to reach out to us developers by clicking the contact button below!"
         android:textAlignment="viewStart"
+        android:textSize="20dp"
 
-        android:textSize="20dp" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/send"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
 
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_corner"
         android:text="Contact" />
 
 </LinearLayout>
