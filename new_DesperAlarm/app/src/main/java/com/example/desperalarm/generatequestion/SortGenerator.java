@@ -4,13 +4,14 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortGenerator extends QuestionGenerator {
+    private final int STR_LENGTH = 15;
     private String randomString;
 
     private String generateRandomString() {
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         StringBuilder builder = new StringBuilder();
         Random random = new Random();
-        while (builder.length() < 15) { // length of the random string.
+        while (builder.length() < STR_LENGTH) { // length of the random string.
             int index = (int) (random.nextFloat() * alphabet.length());
             builder.append(alphabet.charAt(index));
         }

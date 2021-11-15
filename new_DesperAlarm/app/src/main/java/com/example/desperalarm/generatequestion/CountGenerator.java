@@ -5,13 +5,14 @@ import java.util.Locale;
 import java.util.Random;
 
 public class CountGenerator extends QuestionGenerator{
+    private final int ARRAY_LENGTH = 20;
     private int[] randomArray;
     private int threshold;
     private int upperbound = 100;
 
     private int[] generateRandomArray() {
         Random random = new Random();
-        int[] arr = new int[20];
+        int[] arr = new int[ARRAY_LENGTH];
         for (int i = 0; i < 20; i++) {
             arr[i] = random.nextInt(upperbound);
         }

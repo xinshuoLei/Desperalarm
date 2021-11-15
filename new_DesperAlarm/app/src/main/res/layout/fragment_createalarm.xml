@@ -42,7 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
                 android:timePickerMode="spinner" />
+
         </LinearLayout>
+
 
         <EditText
             android:id="@+id/fragment_createalarm_title"
@@ -51,15 +53,31 @@
             android:hint="Alarm Label"
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout" />
 
+        <TextView
+            android:id="@+id/fragment_createalarm_sound_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm Sound"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_scheduleAlarmHeading"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/fragment_createalarm_sound"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_desperate"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
 
         <CheckBox
             android:id="@+id/fragment_createalarm_desperate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
             android:checked="false"
             android:text="DESPERATE Alarm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_sound" />
 
         <CheckBox
             android:id="@+id/fragment_createalarm_recurring"

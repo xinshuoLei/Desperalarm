@@ -66,7 +66,8 @@ public class QuestionActivity extends AppCompatActivity {
                      finish();
                  } else {
                      // if answer is wrong, clear text field
-                     Toast toast = Toast.makeText(QuestionActivity.this, "Wrong Answer!", Toast.LENGTH_SHORT);
+                     Toast toast = Toast.makeText(QuestionActivity.this, "Wrong Answer!",
+                             Toast.LENGTH_SHORT);
                      toast.show();
                      answer.setText("");
                  }
