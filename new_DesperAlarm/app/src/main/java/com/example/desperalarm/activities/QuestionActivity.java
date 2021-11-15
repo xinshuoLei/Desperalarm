@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.desperalarm.R;
@@ -64,6 +66,8 @@ public class QuestionActivity extends AppCompatActivity {
                      finish();
                  } else {
                      // if answer is wrong, clear text field
+                     Toast toast = Toast.makeText(QuestionActivity.this, "Wrong Answer!", Toast.LENGTH_SHORT);
+                     toast.show();
                      answer.setText("");
                  }
             }
