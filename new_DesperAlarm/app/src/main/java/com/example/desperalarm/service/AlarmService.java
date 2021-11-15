@@ -25,6 +25,7 @@ import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.S
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.TITLE;
 import static com.example.desperalarm.createalarm.CreateAlarmFragment.IRRITATING_SOUND;
 import static com.example.desperalarm.createalarm.CreateAlarmFragment.NORMAL_SOUND;
+import static com.example.desperalarm.createalarm.CreateAlarmFragment.SOFT_SOUND;
 
 
 /**
@@ -50,6 +51,11 @@ public class AlarmService extends Service {
      */
     private MediaPlayer irritatingPlayer;
 
+    /**
+     * media player used for soft alarm
+     */
+    private MediaPlayer softPlayer;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -59,9 +65,12 @@ public class AlarmService extends Service {
         if (alarmUri == null) {
             alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         }
+        // prepare alarm sounds
         ringtone = RingtoneManager.getRingtone(this, alarmUri);
         irritatingPlayer = MediaPlayer.create(this, R.raw.irritating_alarm);
         irritatingPlayer.setLooping(true);
+        softPlayer = MediaPlayer.create(this, R.raw.soft_alarm);
+        softPlayer.setLooping(true);
     }
 
     @Override
@@ -89,6 +98,8 @@ public class AlarmService extends Service {
             ringtone.play();
         } else if (soundType.equals(IRRITATING_SOUND)) {
             irritatingPlayer.start();
+        } else if (soundType.equals(SOFT_SOUND)) {
+            softPlayer.start();
         }
 
 
@@ -111,6 +122,8 @@ public class AlarmService extends Service {
             ringtone.stop();
         } else if (soundType.equals(IRRITATING_SOUND)) {
             irritatingPlayer.stop();
+        } else if (soundType.equals(SOFT_SOUND)) {
+            softPlayer.stop();
         }
     }
 

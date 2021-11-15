@@ -1,10 +1,12 @@
 package com.example.desperalarm.createalarm;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -53,9 +55,10 @@ public class CreateAlarmFragment extends Fragment {
     private CreateAlarmViewModel createAlarmViewModel;
 
     public static final String NO_SOUND = "no sound";
+    public static final String SOFT_SOUND = "soft sound";
     public static final String NORMAL_SOUND = "normal sound";
     public static final String IRRITATING_SOUND = "irritating sound";
-    public static final String[] SOUND_TYPES = {NO_SOUND, NORMAL_SOUND, IRRITATING_SOUND};
+    public static final String[] SOUND_TYPES = {NO_SOUND, SOFT_SOUND, NORMAL_SOUND, IRRITATING_SOUND};
     private Spinner sound;
 
     @Override
@@ -86,6 +89,21 @@ public class CreateAlarmFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_dropdown_item, SOUND_TYPES);
         sound.setAdapter(adapter);
+        // set on event change to play sound selected
+        sound.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+                String selection = SOUND_TYPES[position];
+                previewSound(selection);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                return;
+            }
+
+        });
         // listener for the schedule alarm button
         scheduleAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,5 +144,22 @@ public class CreateAlarmFragment extends Fragment {
 
         createAlarmViewModel.insert(alarm);
         alarm.schedule(getContext());
+    }
+
+    /**
+     * play a sound clip of the selected type for user to preview alarm sound
+     */
+    public void previewSound(String selection) {
+        if (selection.equals(NO_SOUND)) {
+            return;
+        }
+        int clip = R.raw.normal_clip;
+        if (selection.equals(IRRITATING_SOUND)) {
+            clip = R.raw.irritating_clip;
+        } else if (selection.equals(SOFT_SOUND)) {
+            clip = R.raw.soft_clip;
+        }
+        MediaPlayer player = MediaPlayer.create(getActivity(), clip);
+        player.start();
     }
 }
