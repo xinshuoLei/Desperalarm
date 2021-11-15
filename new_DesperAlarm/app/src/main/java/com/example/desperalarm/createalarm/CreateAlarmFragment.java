@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -50,6 +52,12 @@ public class CreateAlarmFragment extends Fragment {
 
     private CreateAlarmViewModel createAlarmViewModel;
 
+    public static final String NO_SOUND = "no sound";
+    public static final String NORMAL_SOUND = "normal sound";
+    public static final String IRRITATING_SOUND = "irritating sound";
+    public static final String[] SOUND_TYPES = {NO_SOUND, NORMAL_SOUND, IRRITATING_SOUND};
+    private Spinner sound;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +81,11 @@ public class CreateAlarmFragment extends Fragment {
                 }
             }
         });
+        // set options for sound selection
+        sound = (Spinner) view.findViewById(R.id.fragment_createalarm_sound);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item, SOUND_TYPES);
+        sound.setAdapter(adapter);
         // listener for the schedule alarm button
         scheduleAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +94,7 @@ public class CreateAlarmFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_createAlarmFragment_to_alarmsListFragment);
             }
         });
+
 
         return view;
     }
@@ -106,7 +120,8 @@ public class CreateAlarmFragment extends Fragment {
                 fri.isChecked(),
                 sat.isChecked(),
                 sun.isChecked(),
-                desperate.isChecked()
+                desperate.isChecked(),
+                SOUND_TYPES[sound.getSelectedItemPosition()]
         );
 
         createAlarmViewModel.insert(alarm);

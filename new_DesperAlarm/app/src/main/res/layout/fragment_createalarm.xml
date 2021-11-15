@@ -57,9 +57,15 @@
             android:id="@+id/fragment_createalarm_sound_prompt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alarm Sound"
-            app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_scheduleAlarmHeading"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:text="Alarm Sound:"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_sound"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
 
         <Spinner
             android:id="@+id/fragment_createalarm_sound"
@@ -68,12 +74,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_desperate"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_sound_prompt" />
 
         <CheckBox
             android:id="@+id/fragment_createalarm_desperate"
             android:layout_width="match_parent"
             android:layout_height="36dp"
+            android:layout_marginTop="10dp"
             android:checked="false"
             android:text="DESPERATE Alarm"
             app:layout_constraintStart_toStartOf="parent"

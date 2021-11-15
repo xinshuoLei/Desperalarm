@@ -11,8 +11,9 @@ import java.util.concurrent.Executors;
 
 /**
  * database for alarms. version number is 2 because we updated schema to add desperate boolean
+ * version3: add alarm sound
  */
-@Database(entities = {Alarm.class}, version = 2, exportSchema = false)
+@Database(entities = {Alarm.class}, version = 3, exportSchema = false)
 public abstract class AlarmDatabase extends RoomDatabase {
     public abstract AlarmDatabaseOps alarmDao();
 

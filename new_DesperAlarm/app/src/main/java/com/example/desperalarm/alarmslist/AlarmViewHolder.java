@@ -70,10 +70,10 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         }
 
         if (alarm.isDesperate()) {
-            alarmMode.setText("Desperate");
+            alarmMode.setText("Desperate | " + alarm.getSound());
             alarmMode.setTextColor(Color.RED);
         } else {
-            alarmMode.setText("Regular");
+            alarmMode.setText("Regular | " + alarm.getSound());
         }
 
         alarmStarted.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

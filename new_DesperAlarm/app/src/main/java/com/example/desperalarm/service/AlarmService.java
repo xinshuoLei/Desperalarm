@@ -21,7 +21,10 @@ import com.example.desperalarm.activities.RingActivity;
 
 import static com.example.desperalarm.application.App.CHANNEL_ID;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.DESPERATE;
+import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.SOUND;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.TITLE;
+import static com.example.desperalarm.createalarm.CreateAlarmFragment.IRRITATING_SOUND;
+import static com.example.desperalarm.createalarm.CreateAlarmFragment.NORMAL_SOUND;
 
 
 /**
@@ -33,9 +36,19 @@ public class AlarmService extends Service {
      */
     private Vibrator vibrator;
     /**
-     * Ringtone used for the alarm
+     * Ringtone used for the normal alarm sound
      */
     private Ringtone ringtone;
+
+    /**
+     * sound type of the alarm
+     */
+    private String soundType;
+
+    /**
+     * media player used for irritating alarm
+     */
+    private MediaPlayer irritatingPlayer;
 
     @Override
     public void onCreate() {
@@ -47,14 +60,16 @@ public class AlarmService extends Service {
             alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         }
         ringtone = RingtoneManager.getRingtone(this, alarmUri);
-
+        irritatingPlayer = MediaPlayer.create(this, R.raw.irritating_alarm);
+        irritatingPlayer.setLooping(true);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        soundType = intent.getStringExtra(SOUND);
+
         // create an intent for the ringtone activity, which is shown when user click notification
         Intent notificationIntent = new Intent(this, RingActivity.class);
-
         notificationIntent.putExtra(DESPERATE, intent.getBooleanExtra(DESPERATE, false));
         notificationIntent.putExtra(TITLE, intent.getStringExtra(TITLE));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
@@ -69,8 +84,15 @@ public class AlarmService extends Service {
                 .setContentIntent(pendingIntent)
                 .build();
 
-        // activate ringtone and vibrator
-        ringtone.play();
+
+        if (soundType.equals(NORMAL_SOUND)) {
+            ringtone.play();
+        } else if (soundType.equals(IRRITATING_SOUND)) {
+            irritatingPlayer.start();
+        }
+
+
+        // activate vibrator
         long[] pattern = { 0, 100, 1000 };
         vibrator.vibrate(pattern, 0);
 
@@ -82,8 +104,14 @@ public class AlarmService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ringtone.stop();
+
         vibrator.cancel();
+
+        if (soundType.equals(NORMAL_SOUND)) {
+            ringtone.stop();
+        } else if (soundType.equals(IRRITATING_SOUND)) {
+            irritatingPlayer.stop();
+        }
     }
 
     @Nullable

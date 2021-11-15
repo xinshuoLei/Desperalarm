@@ -22,6 +22,7 @@ import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.F
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.MONDAY;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.RECURRING;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.SATURDAY;
+import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.SOUND;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.SUNDAY;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.THURSDAY;
 import static com.example.desperalarm.broadcastreceiver.AlarmBroadcastReceiver.TITLE;
@@ -57,11 +58,20 @@ public class Alarm {
      */
     private boolean desperate;
 
+    /**
+     * String representing the sound of the alarm
+     */
+    private String sound;
+
+    /**
+     * created long
+     */
     private long created;
 
     public Alarm(int alarmId, int hour, int minute, String title, long created, boolean started,
                  boolean recurring, boolean monday, boolean tuesday, boolean wednesday,
-                 boolean thursday, boolean friday, boolean saturday, boolean sunday, boolean desperate) {
+                 boolean thursday, boolean friday, boolean saturday, boolean sunday, boolean desperate,
+                 String sound) {
         this.alarmId = alarmId;
         this.hour = hour;
         this.minute = minute;
@@ -70,6 +80,7 @@ public class Alarm {
         this.title = title;
         this.created = created;
         this.desperate = desperate;
+        this.sound = sound;
 
         this.monday = monday;
         this.tuesday = tuesday;
@@ -98,6 +109,7 @@ public class Alarm {
         intent.putExtra(SUNDAY, sunday);
         intent.putExtra(TITLE, title);
         intent.putExtra(DESPERATE, desperate);
+        intent.putExtra(SOUND, sound);
         PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(context, alarmId, intent, 0);
 
         // get current time from calendar
@@ -254,6 +266,8 @@ public class Alarm {
     public long getCreated() {
         return created;
     }
+
+    public String getSound() { return sound; }
 
     public boolean isDesperate() { return desperate; }
 
