@@ -2,9 +2,19 @@ package com.example.desperalarm.generatequestion;
 
 import java.util.Random;
 
+/**
+ * generator for simple calculation questions
+ */
 public class CalculationGenerator extends QuestionGenerator {
-
+    /**
+     * question values
+     */
     private int[] questionVals;
+
+    /**
+     * operator for the calculation question
+     * true is addition. false is subtraction
+     */
     private boolean questionOp;
 
     /**
@@ -62,5 +72,17 @@ public class CalculationGenerator extends QuestionGenerator {
             return Integer.parseInt(answer) == (questionVals[0] + questionVals[1]);
         }
         return Integer.parseInt(answer)== (questionVals[0] - questionVals[1]);
+    }
+
+    /**
+     * getters used for test
+     * @return
+     */
+    public int[] getQuestionVals() {
+        return questionVals;
+    }
+
+    public boolean getQuestionOp() {
+        return questionOp;
     }
 }

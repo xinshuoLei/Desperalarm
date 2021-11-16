@@ -17,7 +17,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class SnpashotTest {
     @Test
     public void doAboutScreenshot() {
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();

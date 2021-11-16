@@ -54,11 +54,17 @@ public class CreateAlarmFragment extends Fragment {
 
     private CreateAlarmViewModel createAlarmViewModel;
 
+    /**
+     * constants for different alarm sound types
+     */
     public static final String NO_SOUND = "no sound";
     public static final String SOFT_SOUND = "soft sound";
     public static final String NORMAL_SOUND = "normal sound";
     public static final String IRRITATING_SOUND = "irritating sound";
     public static final String[] SOUND_TYPES = {NO_SOUND, SOFT_SOUND, NORMAL_SOUND, IRRITATING_SOUND};
+    /**
+     * Spinner for sound selection
+     */
     private Spinner sound;
 
     @Override
@@ -93,7 +99,7 @@ public class CreateAlarmFragment extends Fragment {
         sound.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // your code here
+                // when user select an item, play a clip
                 String selection = SOUND_TYPES[position];
                 previewSound(selection);
             }

@@ -93,7 +93,7 @@ public class AlarmService extends Service {
                 .setContentIntent(pendingIntent)
                 .build();
 
-
+        // use different players based on the sound type user selected
         if (soundType.equals(NORMAL_SOUND)) {
             ringtone.play();
         } else if (soundType.equals(IRRITATING_SOUND)) {
@@ -118,6 +118,7 @@ public class AlarmService extends Service {
 
         vibrator.cancel();
 
+        // stop players in use
         if (soundType.equals(NORMAL_SOUND)) {
             ringtone.stop();
         } else if (soundType.equals(IRRITATING_SOUND)) {

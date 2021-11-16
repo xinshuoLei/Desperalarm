@@ -30,15 +30,29 @@ import com.example.desperalarm.service.AlarmService;
  */
 public class QuestionActivity extends AppCompatActivity {
 
+    /**
+     * constant for question types
+     */
     private final String EMPTY = "";
     private final String CALCULATION = "Calculation";
     private final String CALCULATION_HARD = "Hard calculation (multiplication included)";
     private final String SORT = "Sorting";
     private final String COUNT = "Count appearances";
-
-    private QuestionGenerator generator = null;
     private String[] typesArray = {EMPTY, CALCULATION, CALCULATION_HARD, SORT, COUNT};
+
+    /**
+     * QuestionGenerator class used
+     */
+    private QuestionGenerator generator = null;
+
+    /**
+     * selected question type
+     */
+
     private String typeSelection = EMPTY;
+    /**
+     * components in view
+     */
     private TextView question;
     private Button submit;
     private EditText answer;
@@ -61,11 +75,12 @@ public class QuestionActivity extends AppCompatActivity {
                  EditText answer = findViewById(R.id.answer);
                  String result = answer.getText().toString();
                  if (generator.checkAnswer(result)) {
+                     // if answer is right, stop alarm
                      Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
                      getApplicationContext().stopService(intentService);
                      finish();
                  } else {
-                     // if answer is wrong, clear text field
+                     // if answer is wrong, clear text field and show a message
                      Toast toast = Toast.makeText(QuestionActivity.this, "Wrong Answer!",
                              Toast.LENGTH_SHORT);
                      toast.show();
@@ -73,8 +88,6 @@ public class QuestionActivity extends AppCompatActivity {
                  }
             }
         });
-
-
 
         // set options for question types
         Spinner questionType = (Spinner) findViewById(R.id.spinner);
@@ -84,7 +97,6 @@ public class QuestionActivity extends AppCompatActivity {
         questionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // your code here
                 typeSelection = typesArray[position];
                 setQuestion();
             }
@@ -93,10 +105,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parentView) {
                 return;
             }
-
         });
-
-
     }
 
     /**
@@ -105,7 +114,6 @@ public class QuestionActivity extends AppCompatActivity {
     private void setQuestion() {
         switch (typeSelection) {
             case CALCULATION:
-                // generate a random question
                 generator = new CalculationGenerator();
                 question.setText(generator.outputQuestion());
                 break;
@@ -128,6 +136,8 @@ public class QuestionActivity extends AppCompatActivity {
             default:
                 question.setText("");
         }
+
+        // update component visibilities in ui
         if (!typeSelection.equals(EMPTY)) {
             question.setVisibility(View.VISIBLE);
             answer.setVisibility(View.VISIBLE);

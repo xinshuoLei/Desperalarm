@@ -2,17 +2,33 @@ package com.example.desperalarm.generatequestion;
 
 import java.util.Random;
 
+/**
+ * generator for hard calculation questions
+ */
 public class HardCalculationGenerator extends  QuestionGenerator {
 
+    /**
+     * constant for number of operation types
+     */
     private final int NUM_OPS = 3;
+    /**
+     * constant for different operation types
+     */
     private final int SUBTRACTION = 0;
     private final int ADDITION = 1;
     private final int MULTIPLICATION = 2;
+    /**
+     * upperbound for question values
+     */
     private final int UPPERBOUND = 100;
     private final int MULTIPLICATION_BOUND = 10;
-
+    /**
+     * operation of the generated question
+     */
     private int questionOp;
-
+    /**
+     * values in the question
+     */
     private int[] questionVals;
 
 
