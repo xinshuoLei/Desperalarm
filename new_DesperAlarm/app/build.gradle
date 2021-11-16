@@ -1,15 +1,18 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'com.facebook.testing.screenshot'
+}
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    //buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.simplealarmclock"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.desperalarm.TestRunner"
     }
     buildTypes {
         release {
@@ -21,6 +24,7 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
 }
 
 dependencies {
@@ -30,6 +34,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.facebook.testing.screenshot:layout-hierarchy-common:0.14.0'
+    // Litho Component Plugins
+    implementation 'com.facebook.testing.screenshot:layout-hierarchy-litho:0.14.0'
+
 
     // navigation dependencies
     def nav_version = "2.3.0-alpha03"
@@ -48,4 +57,7 @@ dependencies {
     // butterknife dependencies
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+}
+screenshots {
+    referenceDir = "/Users/jinpeiyuan/Desktop/new"
 }

@@ -75,7 +75,7 @@ public class HardCalculationGenerator extends  QuestionGenerator {
         // if operation is multiplication, set the second value to a random value < 10
         questionVals = generateAddSubNumber();
         if (questionOp == MULTIPLICATION) {
-            generateMultiplicationNumber();
+            questionVals = generateMultiplicationNumber();
         }
         return formatQuestion(questionVals, questionOp);
     }

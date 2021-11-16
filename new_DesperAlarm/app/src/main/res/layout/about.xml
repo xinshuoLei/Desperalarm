@@ -38,6 +38,7 @@ answer some question to turn off the alarm"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner"
+        android:textColor="#154C79"
         android:text="Alarm Guide" />
 
     <TextView
@@ -58,7 +59,7 @@ answer some question to turn off the alarm"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-
+        android:textColor="#154C79"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner"
         android:text="Contact" />

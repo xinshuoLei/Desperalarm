@@ -1,9 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.jakewharton:butterknife:10.2.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4db959bb99a793b29fc9e6cd81c48f85/butterknife-10.2.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4db959bb99a793b29fc9e6cd81c48f85/butterknife-10.2.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4db959bb99a793b29fc9e6cd81c48f85/butterknife-10.2.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d998592aa7affa1f3419203baa5ec0a5/transformed/jetified-butterknife-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c6b99e51119ee1dea4a6012fae36ca8/transformed/jetified-butterknife-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/12c269488f9d6aa3f0df4426d6c64b17/transformed/jetified-butterknife-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a87075050b8a1f205f85bc86eb193b4a/transformed/jetified-butterknife-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/98ff2dde62570cba8bf0b607e2a8769f/jetified-butterknife-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1b917e78aa147e5a912ff4448aaccb1a/jetified-butterknife-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/10e1d974ef0a9083c19d3fb78aa5023b/transformed/jetified-butterknife-10.2.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/10e1d974ef0a9083c19d3fb78aa5023b/transformed/jetified-butterknife-10.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/10e1d974ef0a9083c19d3fb78aa5023b/transformed/jetified-butterknife-10.2.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/10.2.1/278a88aebaaffa10d31b6ab1d3bab197ef6f7c87/butterknife-10.2.1-javadoc.jar!/" />

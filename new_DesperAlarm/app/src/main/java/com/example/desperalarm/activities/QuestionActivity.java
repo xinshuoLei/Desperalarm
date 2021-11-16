@@ -132,6 +132,10 @@ public class QuestionActivity extends AppCompatActivity {
             question.setVisibility(View.VISIBLE);
             answer.setVisibility(View.VISIBLE);
             submit.setVisibility(View.VISIBLE);
+        } else {
+            question.setVisibility(View.INVISIBLE);
+            answer.setVisibility(View.INVISIBLE);
+            submit.setVisibility(View.INVISIBLE);
         }
 
     }
