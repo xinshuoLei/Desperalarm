@@ -27,7 +27,7 @@ public class About extends AppCompatActivity {
         sentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendEmail();
+                composeEmail(DEVELOPER_EMAIL, SUGGESTION_SUBJECT);
             }
         });
         Button regularAlarmGuide = findViewById(R.id.regularAlarmGuide);
@@ -51,12 +51,5 @@ public class About extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{recipient});
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         startActivity(intent);
-    }
-
-    /**
-     * Send Email
-     */
-    public void sendEmail() {
-        composeEmail(DEVELOPER_EMAIL, SUGGESTION_SUBJECT);
     }
 }
