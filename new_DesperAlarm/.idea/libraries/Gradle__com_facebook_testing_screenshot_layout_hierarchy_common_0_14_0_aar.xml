@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.testing.screenshot:layout-hierarchy-common:0.14.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e7eca65b4c56e0790ddfa1505ed8b955/transformed/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7fc4bf6a12909b0a5c8fe7b3222a120e/transformed/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2020a2f60f5b4304de875594afe1d408/transformed/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c947f3506e84c38cb08521b7c153d4ed/transformed/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4c31688fa93829b5eb8c3aef16396c9b/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d121a001a2c1157e13267a9ddff08afe/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9c5d056dc9ca471f03a311bcc778d260/transformed/jetified-layout-hierarchy-common-0.14.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9c5d056dc9ca471f03a311bcc778d260/transformed/jetified-layout-hierarchy-common-0.14.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9c5d056dc9ca471f03a311bcc778d260/transformed/jetified-layout-hierarchy-common-0.14.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.testing.screenshot/layout-hierarchy-common/0.14.0/3e87ea181fd5b199994866fa27e6a6f0e421d472/layout-hierarchy-common-0.14.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.testing.screenshot/layout-hierarchy-common/0.14.0/caa3defea513acb2cd66db0bb431a1278c2a1fe3/layout-hierarchy-common-0.14.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

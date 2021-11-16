@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.testing.screenshot:layout-hierarchy-litho:0.14.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d3212c2dc734902825de32662b28ef50/transformed/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cab274ef6db0630d98fbcbb38336dc97/transformed/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35fa8ab3bf58f7cdfd92c479989ba28c/transformed/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3fe48532a5965ea987107220962f3455/transformed/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/26514989608ed9ac91afc390c48ee1a9/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75ac2028f364700d0931e036fe663e00/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bf824916dc12bbcbc8d4f3ae7c5be9a0/transformed/jetified-layout-hierarchy-litho-0.14.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bf824916dc12bbcbc8d4f3ae7c5be9a0/transformed/jetified-layout-hierarchy-litho-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bf824916dc12bbcbc8d4f3ae7c5be9a0/transformed/jetified-layout-hierarchy-litho-0.14.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.testing.screenshot/layout-hierarchy-litho/0.14.0/32f832c66232f8a217a68c72252429f955861e9c/layout-hierarchy-litho-0.14.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.testing.screenshot/layout-hierarchy-litho/0.14.0/df1a355d25acccd8fa39d3684217b5c62314a22e/layout-hierarchy-litho-0.14.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

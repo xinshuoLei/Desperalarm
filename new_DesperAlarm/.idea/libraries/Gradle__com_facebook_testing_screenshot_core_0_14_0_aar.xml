@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.testing.screenshot:core:0.14.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a4f8199fa6c7d5ae9490a5a3fc5b5771/transformed/jetified-core-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dba745d00cf58439188792d3e568592f/transformed/jetified-core-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/426f7fbc2a06abf1445aaeb3df04f3d0/transformed/jetified-core-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0958f286e94dd7b78fa9df2593bb608d/transformed/jetified-core-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/edb9a46c4e55bd87a1ec6de97b1a906b/jetified-core-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7438cccc3f319ffe353d10811321b27f/jetified-core-0.14.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f6c331f31e04f9eb63f5af02ccfeb966/transformed/jetified-core-0.14.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f6c331f31e04f9eb63f5af02ccfeb966/transformed/jetified-core-0.14.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f6c331f31e04f9eb63f5af02ccfeb966/transformed/jetified-core-0.14.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.testing.screenshot/core/0.14.0/691b880ad1a3da7d5e28476dab20d4fbcb4fb378/core-0.14.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.testing.screenshot/core/0.14.0/71e69ce6e24f4406f19cf38db30f8d772b9bd0c1/core-0.14.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
