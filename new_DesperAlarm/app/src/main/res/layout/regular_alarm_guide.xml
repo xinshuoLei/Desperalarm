@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:scrollbars="vertical">
+    android:scrollbars="vertical"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +26,8 @@
                 android:paddingRight="20dp"
                 android:text="Regular Alarm:"
                 android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/maven"/>
 
             <TextView
                 android:id="@+id/regularSchedule"
@@ -35,17 +37,18 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="To schedule a regular alarm, simply select a time and click the schedule alarm button."
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:fontFamily="@font/maven"/>
 
             <ImageView
                 android:id="@+id/regularScheduleImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/regular_alarm_schedule"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="-128dp" />
+                />
 
             <TextView
                 android:id="@+id/regularDismiss"
@@ -55,17 +58,19 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="When a regular alarm goes off, just click dismiss to stop it"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:fontFamily="@font/maven"/>
 
             <ImageView
                 android:id="@+id/regularDismissImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/regular_alarm_dismiss"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="-128dp" />
+                tools:layout_editor_absoluteY="-128dp"
+                />
 
             <TextView
                 android:id="@+id/desperHeader"
@@ -76,7 +81,8 @@
                 android:paddingRight="20dp"
                 android:text="DesperAlarm:"
                 android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/maven"/>
 
             <TextView
                 android:id="@+id/desperSchedule"
@@ -87,15 +93,16 @@
                 android:paddingRight="20dp"
                 android:text="To schedule a regular alarm, select a time, check the DESPERATE Alarm checkbox
 and click the schedule alarm button."
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:fontFamily="@font/maven"/>
 
             <ImageView
                 android:id="@+id/desperScheduleImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/dersperalarm_schedule"
+                app:srcCompat="@drawable/desperalarm_schedule"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="-128dp" />
 
@@ -108,12 +115,13 @@ and click the schedule alarm button."
                 android:paddingRight="20dp"
                 android:text="When a regular alarm goes off, click hard dismiss, then answer a question
 correctly to stop it"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:fontFamily="@font/maven"/>
 
             <ImageView
                 android:id="@+id/desperDismissImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/desperalarm_dismiss"
@@ -123,7 +131,7 @@ correctly to stop it"
             <ImageView
                 android:id="@+id/desperQuestionImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/desperalarm_question"

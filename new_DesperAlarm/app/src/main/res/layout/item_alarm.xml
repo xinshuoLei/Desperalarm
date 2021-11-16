@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="right">
+    android:gravity="right"
+    android:fontFamily="@font/maven">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,7 +24,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textSize="40sp" />
+                android:textSize="40sp"
+                android:fontFamily="@font/sf" />
 
             <ImageView
                 android:id="@+id/item_alarm_recurring"
@@ -34,25 +36,32 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_margin="2dp"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/item_alarm_recurringDays"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp" />
+                    android:fontFamily="@font/maven"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/item_alarm_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/maven"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/item_alarm_mode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/maven"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -62,16 +71,20 @@
                 android:id="@+id/margin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="right"
+                android:layout_gravity="center_vertical"
+                android:gravity="right|center_vertical"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/delete_alarm"
                     android:layout_width="70dp"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="3dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/maven"
                     android:text="delete"
-                    android:textSize="8sp" />
+                    android:textSize="9sp" />
 
                 <Switch
                     android:id="@+id/item_alarm_started"

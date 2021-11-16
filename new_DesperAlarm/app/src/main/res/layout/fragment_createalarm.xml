@@ -15,6 +15,8 @@
             android:id="@+id/fragment_createalarm_scheduleAlarmHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/maven"
             android:text="Schedule Alarm"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -25,7 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_scheduleAlarmHeading">
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_scheduleAlarmHeading"
+            >
 
             <TextView
                 android:layout_width="0dp"
@@ -34,14 +37,16 @@
                 android:layout_weight="0.4"
                 android:text="Alarm Time"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:fontFamily="@font/maven"/>
 
             <TimePicker
                 android:id="@+id/fragment_createalarm_timePicker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
-                android:timePickerMode="spinner" />
+                android:timePickerMode="spinner"
+                android:fontFamily="@font/maven"/>
 
         </LinearLayout>
 
@@ -50,7 +55,14 @@
             android:id="@+id/fragment_createalarm_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/maven"
             android:hint="Alarm Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout" />
 
         <TextView
@@ -65,7 +77,8 @@
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_sound"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title"
+            android:fontFamily="@font/maven"/>
 
         <Spinner
             android:id="@+id/fragment_createalarm_sound"
@@ -76,7 +89,8 @@
             app:layout_constraintBottom_toTopOf="@+id/fragment_createalarm_desperate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_sound_prompt" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_sound_prompt"
+            android:fontFamily="@font/maven"/>
 
         <CheckBox
             android:id="@+id/fragment_createalarm_desperate"
@@ -86,7 +100,8 @@
             android:checked="false"
             android:text="DESPERATE Alarm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_sound" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_sound"
+            android:fontFamily="@font/maven"/>
 
         <CheckBox
             android:id="@+id/fragment_createalarm_recurring"
@@ -95,7 +110,8 @@
             android:checked="false"
             android:text="Recurring Alarm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_desperate" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_desperate"
+            android:fontFamily="@font/maven"/>
 
         <LinearLayout
             android:id="@+id/fragment_createalarm_recurring_options"
@@ -109,43 +125,50 @@
                 android:id="@+id/fragment_createalarm_checkMon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mon" />
+                android:text="Mon"
+                android:fontFamily="@font/maven"/>
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkTue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tue" />
+                android:text="Tue"
+                android:fontFamily="@font/maven"/>
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkWed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wed" />
+                android:text="Wed"
+                android:fontFamily="@font/maven"/>
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thu" />
+                android:text="Thu"
+                android:fontFamily="@font/maven"/>
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkFri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fri" />
+                android:text="Fri"
+                android:fontFamily="@font/maven"/>
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkSat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sat" />
+                android:text="Sat"
+                android:fontFamily="@font/maven"/>
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkSun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sun" />
+                android:text="Sun"
+                android:fontFamily="@font/maven"/>
 
         </LinearLayout>
 
@@ -160,10 +183,12 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/maven"
             android:text="Schedule Alarm"
+            android:textColor="#154C79"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="#154C79"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

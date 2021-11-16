@@ -31,11 +31,13 @@
         android:layout_marginRight="110dp"
         android:width="200dp"
         android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/maven"
         android:foregroundGravity="center"
         android:text="Dismiss"
+        android:textColor="#154C79"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_ring_clock"
-        android:textColor="#154C79"/>
+        app:layout_constraintTop_toBottomOf="@+id/activity_ring_clock" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,8 @@ the alarm by clicking on the first button. When the first button shows ON, the a
 want to stop the alarm after it starts ringing, click the stop button."
         android:textAlignment="viewStart"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/maven"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -29,7 +30,8 @@ want to stop the alarm after it starts ringing, click the stop button."
 answer some question to turn off the alarm"
         android:textAlignment="viewStart"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:fontFamily="@font/maven"/>
 
     <Button
         android:id="@+id/regularAlarmGuide"
@@ -38,8 +40,10 @@ answer some question to turn off the alarm"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/maven"
+        android:text="Alarm Guide"
         android:textColor="#154C79"
-        android:text="Alarm Guide" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -51,6 +55,7 @@ answer some question to turn off the alarm"
         android:text="Feel free to reach out to us developers by clicking the contact button below!"
         android:textAlignment="viewStart"
         android:textSize="20dp"
+        android:fontFamily="@font/maven"
 
         android:textStyle="bold" />
 
@@ -59,9 +64,11 @@ answer some question to turn off the alarm"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="#154C79"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner"
-        android:text="Contact" />
+        android:fontFamily="@font/maven"
+        android:text="Contact"
+        android:textColor="#154C79"
+        android:textSize="16sp" />
 
 </LinearLayout>

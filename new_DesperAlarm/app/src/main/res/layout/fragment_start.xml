@@ -23,6 +23,7 @@
         android:background="@drawable/rounded_corner"
         android:text="Alarm"
         android:textColor="#154C79"
+        android:fontFamily="@font/maven"
         android:textSize="20dp" />
 
 
@@ -36,6 +37,7 @@
         android:background="@drawable/rounded_corner"
         android:text="Timer"
         android:textColor="#154C79"
+        android:fontFamily="@font/maven"
         android:textSize="20dp" />
 
     <Button
@@ -48,6 +50,7 @@
         android:background="@drawable/rounded_corner"
         android:text="about"
         android:textColor="#154C79"
+        android:fontFamily="@font/maven"
         android:textSize="20dp" />
 
 

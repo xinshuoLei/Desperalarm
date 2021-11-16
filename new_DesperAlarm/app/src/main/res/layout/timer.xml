@@ -16,7 +16,8 @@
         android:layout_marginTop="150dp"
         android:hint="Minutes"
         android:inputType="number"
-        android:maxLength="4" />
+        android:maxLength="4"
+        android:fontFamily="@font/maven"/>
 
     <TextView
         android:id="@+id/timerDisplay"
@@ -27,7 +28,8 @@
         android:text="00:00"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="60sp" />
+        android:textSize="60sp"
+        android:fontFamily="@font/sf" />
 
     <Button
         android:id="@+id/setTimerButton"
@@ -36,8 +38,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/maven"
         android:text="Set"
-        android:textColor="#154C79"/>
+        android:textColor="#154C79"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/pauseResumeButton"
@@ -46,8 +50,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
         android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/maven"
         android:text="resume"
-        android:textColor="#154C79"/>
+        android:textColor="#154C79"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/resetTimerButton"
@@ -57,9 +63,11 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="35dp"
         android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/maven"
         android:text="reset"
+        android:textColor="#154C79"
+        android:textSize="16sp"
         android:visibility="invisible"
-        tools:visibility="visible"
-        android:textColor="#154C79"/>
+        tools:visibility="visible" />
 
 </LinearLayout>
