@@ -1,1 +1,4 @@
-# CS242-final-project
+# Desperalarm
+Xinshuo Lei, Peiyuan Jin
+
+Final project of Programming Studio @ UIUC
